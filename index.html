@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paul — Dev Fullstack · BTS SIO SLAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-wrap">
+      <svg class="loader-svg" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+        <circle cx="60" cy="60" r="52" fill="none" stroke="#D6FF4D" stroke-width="2"
+                stroke-dasharray="326" stroke-dashoffset="326" id="loaderCircle">
+          <animate attributeName="stroke-dashoffset" from="326" to="0" dur="1.2s" fill="freeze"/>
+        </circle>
+        <text x="60" y="67" text-anchor="middle" font-family="Syne" font-size="22" font-weight="800" fill="#D6FF4D">P</text>
+      </svg>
+      <p class="loader-label" id="loaderLabel">Chargement…</p>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">PAUL<span>.</span></a>
+      <ul class="nav-ul">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button id="burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- FULLSCREEN MENU -->
+  <div id="menu-overlay">
+    <nav class="menu-nav">
+      <a href="#about"    class="menu-link" data-n="01">À propos</a>
+      <a href="#skills"   class="menu-link" data-n="02">Skills</a>
+      <a href="#projects" class="menu-link" data-n="03">Projets</a>
+      <a href="#parcours" class="menu-link" data-n="04">Parcours</a>
+      <a href="#contact"  class="menu-link" data-n="05">Contact</a>
+    </nav>
+    <div class="menu-foot">BTS SIO SLAM · EFREI Paris · 2ème année</div>
+  </div>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-text" aria-hidden="true">PAUL</div>
+    <canvas id="hero3d" aria-hidden="true"></canvas>
+
+    <div class="hero-inner">
+      <div class="hero-label">
+        <span class="dot-live"></span>
+        BTS SIO · SLAM · 2<sup>ème</sup> année · EFREI Paris
+      </div>
+
+      <h1 class="hero-name">
+        <span class="scramble" data-final="PAUL">PAUL</span>
+      </h1>
+
+      <div class="hero-role">
+        <span id="tw-out"></span><span class="tw-cur">_</span>
+      </div>
+
+      <p class="hero-sub">
+        Développeur <strong>Fullstack</strong> passionné par la construction d'applications
+        web complètes — du frontend jusqu'à la base de données.<br>
+        Futur <strong>Data Engineer</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="cta-main">
+          Voir les projets
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="cta-sec">Me contacter →</a>
+      </div>
+
+      <div class="hero-tags">
+        <span class="h-tag">React</span>
+        <span class="h-tag">Node.js</span>
+        <span class="h-tag">PHP</span>
+        <span class="h-tag">C# .NET</span>
+        <span class="h-tag">MySQL</span>
+        <span class="h-tag">Git</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll-line">
+      <div class="scroll-text">scroll</div>
+      <div class="scroll-bar"><div class="scroll-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- TAPE -->
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · C# · .NET · WPF · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
+      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · C# · .NET · WPF · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
+      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · C# · .NET · WPF · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
+    </div>
+  </div>
+
+  <!-- ════════════════════ ABOUT ════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-label clip-reveal">// 01 — À propos</div>
+
+      <div class="about-grid">
+
+        <div class="about-left clip-reveal">
+          <h2 class="sec-h2">
+            Dev Fullstack.<br>
+            Futur <em>Data<br>Engineer.</em>
+          </h2>
+          <p class="about-bio">
+            Étudiant en <strong>BTS SIO option SLAM</strong> à l'EFREI Paris.
+            J'ai obtenu mon Baccalauréat Général (spécialités <strong>Maths</strong> &amp; <strong>SES</strong>)
+            au Lycée Paul Doumer au Perreux-sur-Marne.
+          </p>
+          <p class="about-bio" style="margin-top:16px">
+            Je développe des applications web <strong>de bout en bout</strong> — frontend,
+            backend, API REST, bases de données. Mon cap : me spécialiser dans
+            les métiers de la <strong>Data &amp; Big Data</strong>.
+          </p>
+
+          <div class="about-pills">
+            <span class="a-pill">🎓 EFREI Paris</span>
+            <span class="a-pill">📍 Île-de-France</span>
+            <span class="a-pill active-pill">✅ Dispo stage / alternance</span>
+            <span class="a-pill">🌍 FR · EN</span>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <!-- 3D sphere here -->
+          <canvas id="about3d" class="clip-reveal"></canvas>
+
+          <div class="counters-grid clip-reveal">
+            <div class="counter-box">
+              <span class="c-num" data-target="5">0</span>
+              <span class="c-label">Projets<br>réalisés</span>
+            </div>
+            <div class="counter-box accent-box">
+              <span class="c-num" data-target="13">0</span>
+              <span class="c-label">Semaines<br>de stage</span>
+            </div>
+            <div class="counter-box">
+              <span class="c-num" data-target="10">0</span>
+              <span class="c-label">Technologies<br>maîtrisées</span>
+            </div>
+            <div class="counter-box">
+              <span class="c-num" data-target="2">0</span>
+              <span class="c-label">Années<br>de formation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SKILLS ════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-label clip-reveal">// 02 — Compétences techniques</div>
+
+      <div class="skills-head">
+        <h2 class="sec-h2 clip-reveal">
+          Ce que je<br>maîtrise.
+        </h2>
+        <canvas id="skills3d" class="clip-reveal"></canvas>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-col clip-reveal">
+          <h3 class="skill-col-title">
+            <span class="skill-col-icon">&lt;/&gt;</span>
+            Frontend
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span class="sk-name">JavaScript</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:90%"></div></div>
+              <span class="sk-pct">90%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">React</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">TypeScript</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
+              <span class="sk-pct">75%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">HTML5 / CSS3</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:95%"></div></div>
+              <span class="sk-pct">95%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">Tailwind CSS</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
+              <span class="sk-pct">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-col clip-reveal">
+          <h3 class="skill-col-title">
+            <span class="skill-col-icon">⚙</span>
+            Backend
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span class="sk-name">Node.js / Express</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
+              <span class="sk-pct">80%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">PHP</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
+              <span class="sk-pct">75%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">C# / .NET</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:70%"></div></div>
+              <span class="sk-pct">70%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">WPF</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:65%"></div></div>
+              <span class="sk-pct">65%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-col clip-reveal">
+          <h3 class="skill-col-title">
+            <span class="skill-col-icon">🗄</span>
+            BDD &amp; Outils
+          </h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span class="sk-name">MySQL</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">SQL Server</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:70%"></div></div>
+              <span class="sk-pct">70%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">Git / GitHub</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">Zabbix</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
+              <span class="sk-pct">75%</span>
+            </div>
+            <div class="skill-item">
+              <span class="sk-name">Vite / Tailwind</span>
+              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
+              <span class="sk-pct">80%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ PROJECTS ════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="sec-label clip-reveal">// 03 — Projets réalisés</div>
+      <h2 class="sec-h2 clip-reveal">Ce que j'ai<br>construit.</h2>
+
+      <div class="proj-cards" id="projCards">
+        <!-- rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ PARCOURS ════════════════════ -->
+  <section id="parcours">
+    <canvas id="cube3d" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="sec-label clip-reveal">// 04 — Parcours</div>
+      <h2 class="sec-h2 clip-reveal">Mon chemin.</h2>
+
+      <div class="tl-grid">
+
+        <div class="tl-card clip-reveal" data-type="edu">
+          <div class="tl-top">
+            <span class="tl-tag edu">Formation</span>
+            <span class="tl-period">En cours</span>
+          </div>
+          <div class="tl-num" aria-hidden="true">01</div>
+          <h3 class="tl-title">BTS SIO SLAM</h3>
+          <h4 class="tl-place">EFREI Paris</h4>
+          <ul class="tl-list">
+            <li>Solutions Logicielles et Applications Métiers</li>
+            <li>Développement web &amp; logiciel full-cycle</li>
+            <li>Objectif : Spécialisation Data / Big Data</li>
+          </ul>
+        </div>
+
+        <div class="tl-card clip-reveal" data-type="xp">
+          <div class="tl-top">
+            <span class="tl-tag xp">Stage · 2ème année</span>
+            <span class="tl-period">5 semaines</span>
+          </div>
+          <div class="tl-num" aria-hidden="true">02</div>
+          <h3 class="tl-title">Stagiaire IT</h3>
+          <h4 class="tl-place">Extia (ESN)</h4>
+          <ul class="tl-list">
+            <li>Découverte infrastructure ESN</li>
+            <li>Observation équipes techniques</li>
+            <li>Apprentissage méthodologies en entreprise</li>
+            <li>Veille technologique</li>
+          </ul>
+        </div>
+
+        <div class="tl-card clip-reveal" data-type="xp">
+          <div class="tl-top">
+            <span class="tl-tag xp">Stage · 1ère année</span>
+            <span class="tl-period">8 semaines</span>
+          </div>
+          <div class="tl-num" aria-hidden="true">03</div>
+          <h3 class="tl-title">Stagiaire Support IT</h3>
+          <h4 class="tl-place">Mairie du Perreux-sur-Marne</h4>
+          <ul class="tl-list">
+            <li>Installation &amp; config complète Zabbix</li>
+            <li>Support Helpdesk utilisateurs</li>
+            <li>Maintenance parc informatique</li>
+            <li>Résolution incidents réseaux &amp; systèmes</li>
+          </ul>
+        </div>
+
+        <div class="tl-card clip-reveal" data-type="edu">
+          <div class="tl-top">
+            <span class="tl-tag edu">Formation</span>
+            <span class="tl-period">Le Perreux-sur-Marne</span>
+          </div>
+          <div class="tl-num" aria-hidden="true">04</div>
+          <h3 class="tl-title">Baccalauréat Général</h3>
+          <h4 class="tl-place">Lycée Paul Doumer</h4>
+          <ul class="tl-list">
+            <li>Spécialité Mathématiques</li>
+            <li>Spécialité SES</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ CONTACT ════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrap clip-reveal">
+        <p class="contact-big">On travaille<br>ensemble ?</p>
+        <p class="contact-sub">
+          Disponible pour un <strong>stage</strong> ou une <strong>alternance</strong>.<br>
+          N'hésite pas à me contacter.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:paul@example.com" class="c-link">
+            <span class="c-link-label">Email</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="c-link" target="_blank" rel="noopener">
+            <span class="c-link-label">LinkedIn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="c-link" target="_blank" rel="noopener">
+            <span class="c-link-label">GitHub</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2025 Paul — BTS SIO SLAM · EFREI Paris</span>
+      <span class="footer-code">while(alive) { learn(); build(); }</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

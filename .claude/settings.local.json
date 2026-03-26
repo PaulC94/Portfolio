@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:portfolio-paulc94.alwaysdata.net)"
+    ]
+  }
+}
