@@ -4,47 +4,55 @@
 ═══════════════════════════════════════════════════════════ */
 'use strict';
 
-/* ─── PROJECTS DATA ─────────────────────────────────────── */
+/* ─── PROJECTS DATA (from GitHub repos) ────────────────── */
 const PROJECTS = [
   {
     num: '01',
-    title: 'Manga Explorer',
-    category: 'Hackathon',
-    stack: ['React', 'API Jikan', 'Axios', 'Tailwind'],
-    desc: "App web développée en hackathon. API Jikan pour animes & mangas.",
-    link: null
+    title: 'NeoAsset Dashboard',
+    category: 'Dashboard',
+    stack: ['TypeScript', 'React', 'API REST', 'Tailwind'],
+    desc: "Dashboard interactif de gestion d'assets numériques. Interface moderne avec graphiques temps réel et gestion de portefeuille.",
+    link: 'https://github.com/PaulC94/NeoAsset-Dashboard'
   },
   {
     num: '02',
-    title: 'Application Fullstack',
-    category: 'Fullstack',
-    stack: ['Node.js', 'React', 'Express', 'MySQL'],
-    desc: "Solution web complète backend + frontend. REST API + auth.",
-    link: null
+    title: 'Manga Dash',
+    category: 'Hackathon',
+    stack: ['React', 'API Jikan', 'CSS', 'Vercel'],
+    desc: "Application web développée en hackathon. Exploration d'animes & mangas via l'API Jikan avec filtres et favoris.",
+    link: 'https://manga-dash.vercel.app'
   },
   {
     num: '03',
-    title: 'Application Client Lourd',
-    category: 'Client Lourd',
-    stack: ['C#', '.NET', 'WPF', 'SQL Server'],
-    desc: "Logiciel bureau pour gestion de données locales. Interface WPF.",
-    link: null
+    title: 'Scan Tracker',
+    category: 'Fullstack',
+    stack: ['TypeScript', 'Next.js', 'Vercel', 'API'],
+    desc: "Application de suivi de lectures manga. Tracking des chapitres lus, liste de lecture et notifications.",
+    link: 'https://scan-tracker.vercel.app'
   },
   {
     num: '04',
-    title: 'Site Client Léger',
+    title: 'Gestion Auto-École',
     category: 'Client Léger',
-    stack: ['HTML', 'CSS', 'PHP', 'MySQL'],
-    desc: "Interface web intranet, gestion dynamique côté serveur.",
-    link: null
+    stack: ['PHP', 'MySQL', 'HTML/CSS', 'CRUD'],
+    desc: "Application web de gestion d'auto-école : planning, élèves, moniteurs, examens. Interface admin complète.",
+    link: 'https://github.com/PaulC94/Gestion-AutoEcole'
   },
   {
     num: '05',
-    title: 'Plateforme E-Learning',
-    category: 'Client Léger',
-    stack: ['Wix', 'CMS', 'Web Design'],
-    desc: "Site éducatif responsive pour l'apprentissage en ligne.",
-    link: 'https://paulc94.ovh'
+    title: 'Puissance 4',
+    category: 'Algorithmique',
+    stack: ['C', 'Algorithmique', 'Terminal'],
+    desc: "Jeu Puissance 4 en C. Intelligence artificielle basique, détection de victoire et interface terminal.",
+    link: 'https://github.com/PaulC94/Puissance4'
+  },
+  {
+    num: '06',
+    title: 'Projet E-Commerce',
+    category: 'Fullstack',
+    stack: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
+    desc: "Plateforme e-commerce complète avec panier, gestion produits, système de commandes et interface d'administration.",
+    link: 'https://github.com/PaulC94/projet-dev-Ecommerce'
   }
 ];
 
@@ -64,7 +72,7 @@ function initLoader() {
 function revealHero() {
   const els = [
     '.hero-label', '.hero-name', '.hero-role',
-    '.hero-sub', '.hero-actions', '.hero-scroll-line'
+    '.hero-sub', '.hero-actions', '.hero-tags', '.hero-scroll-line'
   ];
   els.forEach((sel, i) => {
     const el = document.querySelector(sel);
@@ -84,7 +92,7 @@ function revealHero() {
 ═══════════════════════════════════════════════════════════ */
 function initCursor() {
   const cur = document.getElementById('cursor');
-  if (!cur || window.matchMedia('(max-width:600px)').matches) return;
+  if (!cur || window.matchMedia('(max-width:680px)').matches) return;
 
   let mx = 0, my = 0, cx = 0, cy = 0;
 
@@ -98,7 +106,7 @@ function initCursor() {
     requestAnimationFrame(loop);
   })();
 
-  document.querySelectorAll('a, button, .proj-row, .tl-card, .c-link, .cta-main, .cta-sec').forEach(el => {
+  document.querySelectorAll('a, button, .proj-card, .tl-card, .c-link, .cta-main, .cta-sec').forEach(el => {
     el.addEventListener('mouseenter', () => cur.classList.add('big'));
     el.addEventListener('mouseleave', () => cur.classList.remove('big'));
   });
@@ -137,7 +145,7 @@ function initNav() {
 function initTypewriter() {
   const el = document.getElementById('tw-out');
   if (!el) return;
-  const words = ['Dev Fullstack_', 'Futur Data Engineer_', 'BTS SIO SLAM_', 'Passionné d\'IT_'];
+  const words = ['Dev Fullstack_', 'Futur Data Engineer_', 'BTS SIO SLAM_', "Passionné d'IT_"];
   let wi = 0, ci = 0, del = false;
 
   function tick() {
@@ -215,40 +223,62 @@ function initCounters() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   8. PROJECTS — render + hover
+   8. SKILLS — animate bars on scroll
 ═══════════════════════════════════════════════════════════ */
-function initProjects() {
-  const list = document.getElementById('projList');
-  if (!list) return;
-
-  PROJECTS.forEach(p => {
-    const row = document.createElement('div');
-    row.className = 'proj-row clip-reveal';
-    row.innerHTML = `
-      <span class="proj-num">${p.num}</span>
-      <div class="proj-main">
-        <div class="proj-title-txt">${p.title}</div>
-        <div class="proj-cat">${p.category}</div>
-        <div class="proj-stack-row">${p.stack.join(' · ')}</div>
-      </div>
-      <div class="proj-right">
-        ${p.link ? `<a class="proj-ext-link" href="${p.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Voir le site ↗</a>` : ''}
-        <div class="proj-arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>`;
-    list.appendChild(row);
-  });
-
-  /* re-trigger reveal for dynamic rows */
+function initSkills() {
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  list.querySelectorAll('.clip-reveal').forEach(el => io.observe(el));
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      /* Animate all bars inside the visible column */
+      e.target.querySelectorAll('.sk-fill').forEach((bar, i) => {
+        setTimeout(() => bar.classList.add('go'), i * 120);
+      });
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.skill-col').forEach(col => io.observe(col));
 }
 
 /* ═══════════════════════════════════════════════════════════
-   9. SMOOTH SCROLL (offset for fixed nav)
+   9. PROJECTS — render cards
+═══════════════════════════════════════════════════════════ */
+function initProjects() {
+  const container = document.getElementById('projCards');
+  if (!container) return;
+
+  PROJECTS.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'proj-card clip-reveal';
+    card.innerHTML = `
+      <div class="pc-top">
+        <span class="pc-num">${p.num}</span>
+        <span class="pc-cat">${p.category}</span>
+      </div>
+      <h3 class="pc-title">${p.title}</h3>
+      <p class="pc-desc">${p.desc}</p>
+      <div class="pc-stack">
+        ${p.stack.map(t => `<span class="pc-tag">${t}</span>`).join('')}
+      </div>
+      ${p.link ? `<a class="pc-link" href="${p.link}" target="_blank" rel="noopener">
+        Voir le projet
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>` : ''}
+    `;
+    container.appendChild(card);
+  });
+
+  /* re-trigger reveal for dynamic cards */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  container.querySelectorAll('.clip-reveal').forEach(el => io.observe(el));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   10. SMOOTH SCROLL (offset for fixed nav)
 ═══════════════════════════════════════════════════════════ */
 function initScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -262,7 +292,7 @@ function initScroll() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   10. THREE.JS — TORUS KNOT in HERO (3D #1)
+   11. THREE.JS — TORUS KNOT in HERO (3D #1)
 ═══════════════════════════════════════════════════════════ */
 function init3DHero() {
   const canvas = document.getElementById('hero3d');
@@ -270,13 +300,9 @@ function init3DHero() {
 
   const W = canvas.offsetWidth;
   const H = canvas.offsetHeight;
-  canvas.width  = W * window.devicePixelRatio;
-  canvas.height = H * window.devicePixelRatio;
-  canvas.style.width  = W + 'px';
-  canvas.style.height = H + 'px';
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(W, H);
   renderer.setClearColor(0x000000, 0);
 
@@ -332,16 +358,12 @@ function init3DHero() {
     knot.rotation.y  += 0.006;
     ring.rotation.z  += 0.002;
     points.rotation.y += 0.001;
-
-    /* Smooth parallax */
     knot.rotation.y  += (mx - knot.rotation.y  * 0.1) * 0.015;
     knot.rotation.x  += (my - knot.rotation.x  * 0.1) * 0.015;
-
     renderer.render(scene, camera);
   }
   animate();
 
-  /* Resize */
   window.addEventListener('resize', () => {
     const nW = canvas.offsetWidth;
     const nH = canvas.offsetHeight;
@@ -352,20 +374,181 @@ function init3DHero() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   11. THREE.JS — FLOATING CUBE in PARCOURS section (3D #2)
+   12. THREE.JS — WIREFRAME SPHERE in ABOUT (3D #2)
+═══════════════════════════════════════════════════════════ */
+function init3DAbout() {
+  const canvas = document.getElementById('about3d');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const W = canvas.offsetWidth;
+  const H = canvas.offsetHeight;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  renderer.setClearColor(0x000000, 0);
+
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 100);
+  camera.position.z = 4;
+
+  /* ---- Wireframe Icosahedron ---- */
+  const icoGeo = new THREE.IcosahedronGeometry(1.3, 1);
+  const icoEdges = new THREE.EdgesGeometry(icoGeo);
+  const icoMat = new THREE.LineBasicMaterial({ color: 0xD6FF4D, transparent: true, opacity: 0.4 });
+  const ico = new THREE.LineSegments(icoEdges, icoMat);
+  scene.add(ico);
+
+  /* ---- Outer ring 1 ---- */
+  const ring1Geo = new THREE.TorusGeometry(1.8, 0.008, 8, 100);
+  const ring1Mat = new THREE.MeshBasicMaterial({ color: 0xD6FF4D, transparent: true, opacity: 0.15 });
+  const ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
+  ring1.rotation.x = Math.PI / 3;
+  scene.add(ring1);
+
+  /* ---- Outer ring 2 ---- */
+  const ring2 = ring1.clone();
+  ring2.rotation.x = -Math.PI / 5;
+  ring2.rotation.y = Math.PI / 4;
+  scene.add(ring2);
+
+  /* ---- Dot cloud ---- */
+  const dotCount = 120;
+  const dotPos = new Float32Array(dotCount * 3);
+  for (let i = 0; i < dotCount; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 1.3 + (Math.random() - 0.5) * 0.15;
+    dotPos[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
+    dotPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+    dotPos[i * 3 + 2] = r * Math.cos(phi);
+  }
+  const dotGeo = new THREE.BufferGeometry();
+  dotGeo.setAttribute('position', new THREE.BufferAttribute(dotPos, 3));
+  const dotMat = new THREE.PointsMaterial({ color: 0xD6FF4D, size: 0.04, transparent: true, opacity: 0.6 });
+  const dots = new THREE.Points(dotGeo, dotMat);
+  scene.add(dots);
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.008;
+    ico.rotation.x = t * 0.4;
+    ico.rotation.y = t * 0.6;
+    ring1.rotation.z = t * 0.3;
+    ring2.rotation.z = -t * 0.25;
+    dots.rotation.y = t * 0.15;
+    ico.position.y = Math.sin(t * 0.7) * 0.08;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const nW = canvas.offsetWidth;
+    const nH = canvas.offsetHeight;
+    camera.aspect = nW / nH;
+    camera.updateProjectionMatrix();
+    renderer.setSize(nW, nH);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   13. THREE.JS — DODECAHEDRON in SKILLS (3D #3)
+═══════════════════════════════════════════════════════════ */
+function init3DSkills() {
+  const canvas = document.getElementById('skills3d');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const W = canvas.offsetWidth;
+  const H = canvas.offsetHeight;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  renderer.setClearColor(0x000000, 0);
+
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 100);
+  camera.position.z = 4;
+
+  /* ---- Wireframe Dodecahedron ---- */
+  const dodGeo = new THREE.DodecahedronGeometry(1.2, 0);
+  const dodEdges = new THREE.EdgesGeometry(dodGeo);
+  const dodMat = new THREE.LineBasicMaterial({ color: 0xD6FF4D, transparent: true, opacity: 0.5 });
+  const dod = new THREE.LineSegments(dodEdges, dodMat);
+  scene.add(dod);
+
+  /* ---- Inner octahedron ---- */
+  const octGeo = new THREE.OctahedronGeometry(0.5, 0);
+  const octEdges = new THREE.EdgesGeometry(octGeo);
+  const octMat = new THREE.LineBasicMaterial({ color: 0x9b59f5, transparent: true, opacity: 0.35 });
+  const oct = new THREE.LineSegments(octEdges, octMat);
+  scene.add(oct);
+
+  /* ---- Orbiting particles ---- */
+  const orbitCount = 60;
+  const orbitGeo = new THREE.BufferGeometry();
+  const orbitPos = new Float32Array(orbitCount * 3);
+  const orbitAngles = [];
+  for (let i = 0; i < orbitCount; i++) {
+    orbitAngles.push({
+      angle: Math.random() * Math.PI * 2,
+      speed: 0.005 + Math.random() * 0.01,
+      r: 1.5 + Math.random() * 0.5,
+      y: (Math.random() - 0.5) * 1.2
+    });
+  }
+  orbitGeo.setAttribute('position', new THREE.BufferAttribute(orbitPos, 3));
+  const orbitMat = new THREE.PointsMaterial({ color: 0xD6FF4D, size: 0.035, transparent: true, opacity: 0.7 });
+  const orbitPts = new THREE.Points(orbitGeo, orbitMat);
+  scene.add(orbitPts);
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.01;
+    dod.rotation.x = t * 0.3;
+    dod.rotation.y = t * 0.5;
+    oct.rotation.x = -t * 0.6;
+    oct.rotation.y = -t * 0.4;
+    dod.position.y = Math.sin(t * 0.6) * 0.1;
+    oct.position.y = dod.position.y;
+
+    /* Update orbiting particles */
+    const positions = orbitPts.geometry.attributes.position.array;
+    for (let i = 0; i < orbitCount; i++) {
+      const o = orbitAngles[i];
+      o.angle += o.speed;
+      positions[i * 3]     = Math.cos(o.angle) * o.r;
+      positions[i * 3 + 1] = o.y + Math.sin(t + i) * 0.1;
+      positions[i * 3 + 2] = Math.sin(o.angle) * o.r;
+    }
+    orbitPts.geometry.attributes.position.needsUpdate = true;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const nW = canvas.offsetWidth;
+    const nH = canvas.offsetHeight;
+    camera.aspect = nW / nH;
+    camera.updateProjectionMatrix();
+    renderer.setSize(nW, nH);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   14. THREE.JS — FLOATING CUBE in PARCOURS (3D #4)
 ═══════════════════════════════════════════════════════════ */
 function init3DCube() {
   const canvas = document.getElementById('cube3d');
   if (!canvas || typeof THREE === 'undefined') return;
 
-  const W = 200, H = 200;
-  canvas.width  = W * window.devicePixelRatio;
-  canvas.height = H * window.devicePixelRatio;
-  canvas.style.width  = W + 'px';
-  canvas.style.height = H + 'px';
+  const W = 220, H = 220;
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(W, H);
   renderer.setClearColor(0x000000, 0);
 
@@ -409,7 +592,6 @@ function init3DCube() {
     cube.rotation.y  = t;
     inner.rotation.x = -t * 1.1;
     inner.rotation.y = -t * 0.8;
-    /* Bobbing */
     cube.position.y  = Math.sin(t * 0.8) * 0.12;
     inner.position.y = cube.position.y;
     renderer.render(scene, camera);
@@ -428,8 +610,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initScramble();
   initReveal();
   initCounters();
+  initSkills();
   initProjects();
   initScroll();
   init3DHero();
+  init3DAbout();
+  init3DSkills();
   init3DCube();
 });

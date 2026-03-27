@@ -1,7 +1,40 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:portfolio-paulc94.alwaysdata.net)"
+      "WebFetch(domain:portfolio-paulc94.alwaysdata.net)",
+      "Bash(curl -s \"https://api.github.com/users/PaulC94/repos?sort=updated&per_page=30\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/NeoAsset-Dashboard\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f''''Name: {d.get\\(name\\)}\\\\nDesc: {d.get\\(description\\)}\\\\nLang: {d.get\\(language\\)}\\\\nStars: {d.get\\(stargazers_count\\)}\\\\nTopics: {d.get\\(topics\\)}\\\\nCreated: {d.get\\(created_at\\)}\\\\nUpdated: {d.get\\(updated_at\\)}''''\\)\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/NeoAsset-Dashboard/readme\")",
+      "Bash(python3 -c \"import json,sys,base64; d=json.load\\(sys.stdin\\); print\\(base64.b64decode\\(d[''''content'''']\\).decode\\(\\)[:800]\\)\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/NeoAsset-Dashboard/contents/\")",
+      "Bash(python3 -c \"import json,sys; [print\\(f[''''name'''']\\) for f in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/manga-dash\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/manga-dash/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/manga-dash/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/scan_tracker\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/scan_tracker/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/scan_tracker/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Gestion-AutoEcole\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Gestion-AutoEcole/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Gestion-AutoEcole/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Puissance4\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Puissance4/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Puissance4/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Login-PHP-TpCyber\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Login-PHP-TpCyber/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Login-PHP-TpCyber/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/projet-dev-Ecommerce\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/projet-dev-Ecommerce/readme\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/projet-dev-Ecommerce/contents/\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/manga-dash/contents/Manga-Dash\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/scan_tracker/contents/app\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Gestion-AutoEcole/contents/Mes_sites\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/NeoAsset-Dashboard/contents/src\")",
+      "Bash(curl -s \"https://api.github.com/repos/PaulC94/Login-PHP-TpCyber/contents/index.html\")",
+      "Bash(python3 -c \"import json,sys,base64; d=json.load\\(sys.stdin\\); print\\(base64.b64decode\\(d[''''content'''']\\).decode\\(\\)[:500]\\)\")",
+      "Bash(gh api:*)",
+      "WebFetch(domain:api.github.com)"
     ]
   }
 }
