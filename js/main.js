@@ -308,10 +308,10 @@ function init3DHero() {
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
-  camera.position.z = 5;
+  camera.position.z = 7.2;
 
   /* ---- Torus Knot Wireframe ---- */
-  const geo = new THREE.TorusKnotGeometry(1.4, 0.42, 180, 24, 2, 3);
+  const geo = new THREE.TorusKnotGeometry(1.2, 0.36, 180, 24, 2, 3);
   const mat = new THREE.MeshBasicMaterial({
     color: 0xD6FF4D,
     wireframe: true,
