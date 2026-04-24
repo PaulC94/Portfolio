@@ -18,7 +18,7 @@
   position: absolute;
   top: -200px; right: -200px;
   width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(155,89,245,.1) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(232,168,56,.1) 0%, transparent 60%);
   pointer-events: none;
   animation: blob1 12s ease-in-out infinite alternate;
 }
@@ -189,8 +189,8 @@
 
 .comp-card:hover {
   border-color: rgba(214,255,77,.2);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,.4);
+  transform: translateY(-5px) rotate(0.3deg);
+  box-shadow: 0 20px 56px rgba(0,0,0,.5), 0 0 30px rgba(214,255,77,.03);
 }
 
 .comp-card:hover::after {
@@ -301,9 +301,10 @@
 
 .sit-card:hover {
   border-color: rgba(214,255,77,.3);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  transform: translateY(-5px) rotate(-0.3deg);
+  box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 30px rgba(214,255,77,.03);
 }
+.sit-card:nth-child(even):hover { transform: translateY(-5px) rotate(0.3deg); }
 
 .sit-card:hover::after {
   opacity: 1;
@@ -314,7 +315,7 @@
 }
 
 .e5-card::after {
-  background: radial-gradient(circle at 20% 0%, rgba(155,89,245,.06), transparent 50%);
+  background: radial-gradient(circle at 20% 0%, rgba(232,168,56,.06), transparent 50%);
 }
 
 .sit-header {
@@ -393,8 +394,8 @@
 
 .e5-card:hover .sit-skills span {
   color: var(--pur);
-  border-color: rgba(155,89,245,.25);
-  background: rgba(155,89,245,.06);
+  border-color: rgba(232,168,56,.25);
+  background: rgba(232,168,56,.06);
 }
 
 /* ─── E5 LAYOUT ──────────────────────────────── */
@@ -438,7 +439,7 @@
 }
 
 .e5-comp:hover {
-  background: rgba(155,89,245,.03);
+  background: rgba(232,168,56,.03);
   padding-left: 16px;
   margin-left: -16px;
   border-radius: 4px;
@@ -448,7 +449,7 @@
   font-family: var(--font-h);
   font-size: 42px;
   font-weight: 800;
-  color: rgba(155,89,245,.3);
+  color: rgba(232,168,56,.3);
   letter-spacing: -0.04em;
   line-height: 1;
   flex-shrink: 0;
@@ -494,7 +495,7 @@
 }
 
 .synthese-table thead {
-  background: rgba(155,89,245,.08);
+  background: rgba(232,168,56,.08);
 }
 
 .synthese-table th {
@@ -505,7 +506,7 @@
   text-align: left;
   padding: 16px 20px;
   letter-spacing: -0.01em;
-  border-bottom: 2px solid rgba(155,89,245,.2);
+  border-bottom: 2px solid rgba(232,168,56,.2);
   white-space: nowrap;
 }
 
@@ -521,7 +522,7 @@
 }
 
 .synthese-table tbody tr:hover {
-  background: rgba(155,89,245,.04);
+  background: rgba(232,168,56,.04);
 }
 
 .synthese-table tbody tr:hover td {
@@ -682,9 +683,11 @@
 
 .veille-sujet:hover {
   border-color: rgba(214,255,77,.2);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  transform: translateY(-5px) rotate(-0.3deg);
+  box-shadow: 0 20px 56px rgba(0,0,0,.55), 0 0 30px rgba(214,255,77,.03);
 }
+.veille-sujet:nth-child(even):hover { transform: translateY(-5px) rotate(0.25deg); }
+.veille-method:nth-child(2) { transform: translateY(8px); } /* asymmetric grid */
 
 .veille-sujet:hover::before {
   transform: scaleY(1);
@@ -926,8 +929,8 @@
 
 .cv-tag.data {
   color: var(--pur);
-  border-color: rgba(155,89,245,.2);
-  background: rgba(155,89,245,.06);
+  border-color: rgba(232,168,56,.2);
+  background: rgba(232,168,56,.06);
 }
 
 .cv-tag.dev {
@@ -1029,6 +1032,22 @@
   transform: translateY(-2px);
 }
 
+/* ─── STAGGER CARDS ───────────────────────────── */
+.comp-grid > *:nth-child(1) { --stagger: 0; }
+.comp-grid > *:nth-child(2) { --stagger: 1; }
+.comp-grid > *:nth-child(3) { --stagger: 2; }
+.comp-grid > *:nth-child(4) { --stagger: 3; }
+.sit-grid > *:nth-child(1) { --stagger: 0; }
+.sit-grid > *:nth-child(2) { --stagger: 1; }
+.sit-grid > *:nth-child(3) { --stagger: 2; }
+.sit-grid > *:nth-child(4) { --stagger: 3; }
+.veille-method-grid > *:nth-child(1) { --stagger: 0; }
+.veille-method-grid > *:nth-child(2) { --stagger: 1; }
+.veille-method-grid > *:nth-child(3) { --stagger: 2; }
+.veille-sujets-grid > *:nth-child(1) { --stagger: 0; }
+.veille-sujets-grid > *:nth-child(2) { --stagger: 1; }
+.veille-sujets-grid > *:nth-child(3) { --stagger: 2; }
+
 /* ─── BACK SECTION ───────────────────────────── */
 #back-section {
   background: var(--acc);
@@ -1064,7 +1083,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 60% at 20% 50%, rgba(155,89,245,.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse 50% 60% at 20% 50%, rgba(232,168,56,.05) 0%, transparent 70%);
   pointer-events: none;
 }
 

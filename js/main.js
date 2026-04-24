@@ -25,7 +25,7 @@ const PROJECTS = [
   {
     num: '03',
     title: 'Scan Tracker',
-    category: 'Fullstack',
+    category: 'Web',
     stack: ['TypeScript', 'Next.js', 'Vercel', 'API'],
     desc: "Application de suivi de lectures manga. Tracking des chapitres lus, liste de lecture et notifications.",
     link: 'https://scan-tracker.vercel.app'
@@ -49,7 +49,7 @@ const PROJECTS = [
   {
     num: '06',
     title: 'Projet E-Commerce',
-    category: 'Fullstack',
+    category: 'Web',
     stack: ['PHP', 'MySQL', 'JavaScript', 'CSS'],
     desc: "Plateforme e-commerce complète avec panier, gestion produits, système de commandes et interface d'administration.",
     link: 'https://github.com/PaulC94/projet-dev-Ecommerce'
@@ -145,7 +145,7 @@ function initNav() {
 function initTypewriter() {
   const el = document.getElementById('tw-out');
   if (!el) return;
-  const words = ['Dev Fullstack_', 'Futur Data Engineer_', 'BTS SIO SLAM_', "Passionné d'IT_"];
+  const words = ['BTS SIO SLAM_', 'Développeur Web_', 'PHP · React · C#_', 'En alternance bientôt_'];
   let wi = 0, ci = 0, del = false;
 
   function tick() {
@@ -481,7 +481,7 @@ function init3DSkills() {
   /* ---- Inner octahedron ---- */
   const octGeo = new THREE.OctahedronGeometry(0.5, 0);
   const octEdges = new THREE.EdgesGeometry(octGeo);
-  const octMat = new THREE.LineBasicMaterial({ color: 0x9b59f5, transparent: true, opacity: 0.35 });
+  const octMat = new THREE.LineBasicMaterial({ color: 0xE8A838, transparent: true, opacity: 0.35 });
   const oct = new THREE.LineSegments(octEdges, octMat);
   scene.add(oct);
 

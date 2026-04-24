@@ -55,7 +55,7 @@ function init3DExamHero() {
   const curve2 = new THREE.CatmullRomCurve3(helixPoints2);
 
   const tubeMat1 = new THREE.MeshBasicMaterial({ color: 0xD6FF4D, transparent: true, opacity: 0.5 });
-  const tubeMat2 = new THREE.MeshBasicMaterial({ color: 0x9b59f5, transparent: true, opacity: 0.4 });
+  const tubeMat2 = new THREE.MeshBasicMaterial({ color: 0xE8A838, transparent: true, opacity: 0.4 });
 
   const tube1 = new THREE.Mesh(new THREE.TubeGeometry(curve1, 100, 0.03, 6, false), tubeMat1);
   const tube2 = new THREE.Mesh(new THREE.TubeGeometry(curve2, 100, 0.03, 6, false), tubeMat2);
@@ -140,7 +140,7 @@ function init3DE5() {
   const originalPositions = geo.attributes.position.array.slice();
 
   const edges = new THREE.EdgesGeometry(geo);
-  const mat = new THREE.LineBasicMaterial({ color: 0x9b59f5, transparent: true, opacity: 0.45 });
+  const mat = new THREE.LineBasicMaterial({ color: 0xE8A838, transparent: true, opacity: 0.45 });
   const sphere = new THREE.LineSegments(edges, mat);
   scene.add(sphere);
 
@@ -153,7 +153,7 @@ function init3DE5() {
 
   /* ---- Orbit ring ---- */
   const ringGeo = new THREE.TorusGeometry(1.8, 0.008, 8, 100);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0x9b59f5, transparent: true, opacity: 0.2 });
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0xE8A838, transparent: true, opacity: 0.2 });
   const ring = new THREE.Mesh(ringGeo, ringMat);
   ring.rotation.x = Math.PI / 3;
   scene.add(ring);
@@ -291,7 +291,7 @@ function init3DCV() {
   /* ---- Inner ring ---- */
   const innerGeo = new THREE.TorusGeometry(0.8, 0.15, 12, 60);
   const innerMat = new THREE.MeshBasicMaterial({
-    color: 0x9b59f5,
+    color: 0xE8A838,
     wireframe: true,
     transparent: true,
     opacity: 0.25

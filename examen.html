@@ -6,7 +6,7 @@
   <title>Paul Cohen — Épreuves BTS SIO · E4, E5 & E6</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/examen.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -25,7 +25,7 @@
                 stroke-dasharray="326" stroke-dashoffset="326" id="loaderCircle">
           <animate attributeName="stroke-dashoffset" from="326" to="0" dur="1.2s" fill="freeze"/>
         </circle>
-        <text x="60" y="67" text-anchor="middle" font-family="Syne" font-size="22" font-weight="800" fill="#D6FF4D">P</text>
+        <text x="60" y="67" text-anchor="middle" font-family="Bricolage Grotesque" font-size="22" font-weight="800" fill="#D6FF4D">P</text>
       </svg>
       <p class="loader-label" id="loaderLabel">Chargement…</p>
     </div>
@@ -389,7 +389,7 @@
               <span class="sit-num">RP5</span>
               <span class="sit-tag">Projet personnel</span>
             </div>
-            <h4 class="sit-name">E-Commerce Fullstack</h4>
+            <h4 class="sit-name">E-Commerce PHP/MySQL</h4>
             <p class="sit-desc">
               Plateforme e-commerce complète avec panier, gestion produits,
               système de commandes et interface d'administration.
@@ -462,8 +462,8 @@
       <h2 class="sec-h2 clip-reveal">Parcours de<br><em>compétences.</em></h2>
 
       <div class="exam-intro clip-reveal">
-        <div class="exam-badge" style="border-color:rgba(155,89,245,.3)">
-          <span class="badge-code" style="color:#9b59f5">E6</span>
+        <div class="exam-badge" style="border-color:rgba(232,168,56,.3)">
+          <span class="badge-code" style="color:#E8A838">E6</span>
           <span class="badge-coef">Coefficient 4</span>
         </div>
         <p class="exam-desc">
@@ -474,51 +474,79 @@
         </p>
       </div>
 
+      <!-- PROJET UNIQUE : Muni-Prospection LAcarel -->
+      <div class="situations-block clip-reveal" style="margin-top:32px">
+        <h3 class="sit-title">Projet E6 — Muni-Prospection LAcarel</h3>
+        <p class="exam-desc" style="margin-bottom:32px">
+          Application de <strong>prospection commerciale</strong> pour la société LAcarel,
+          développée en deux versions : un <strong>client léger</strong> (web) et un <strong>client lourd</strong> (desktop).
+          Les deux versions partagent la même base de données <strong>MySQL</strong> et permettent de gérer
+          les communes, élus et saisies de prospection.
+        </p>
+      </div>
+
       <div class="sit-grid">
 
-        <div class="sit-card clip-reveal" style="border-color:rgba(155,89,245,.15)">
+        <div class="sit-card clip-reveal" style="border-color:rgba(232,168,56,.15)">
           <div class="sit-header">
-            <span class="sit-num" style="color:#9b59f5">CL</span>
-            <span class="sit-tag">Client Léger</span>
+            <span class="sit-num" style="color:#E8A838">CL</span>
+            <span class="sit-tag">Client Léger · Web</span>
           </div>
-          <h4 class="sit-name">Applications Web</h4>
+          <h4 class="sit-name">Muni-Prospection — Version Web (PHP)</h4>
           <p class="sit-desc">
-            Développement d'applications accessibles via un <strong>navigateur web</strong>.
-            Architecture client-serveur, PHP/MySQL, HTML/CSS/JavaScript.
-            Le traitement s'effectue principalement côté <strong>serveur</strong>.
+            Application web en <strong>PHP 8.3</strong> avec <strong>Bootstrap 5.3</strong>.
+            Connexion via PDO avec <strong>Singleton</strong>, gestion de sessions et <strong>verrouillage pessimiste SQL</strong>
+            pour éviter les conflits de saisie. Dashboard avec KPI, filtres, pagination.
           </p>
           <div class="sit-skills">
-            <span>PHP</span><span>MySQL</span><span>HTML/CSS</span><span>JavaScript</span><span>Apache</span>
+            <span>PHP 8.3</span><span>MySQL / PDO</span><span>Bootstrap 5.3</span><span>JavaScript</span><span>Sessions</span>
           </div>
           <div style="margin-top:16px">
-            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Mes réalisations :</h5>
+            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Fichiers principaux :</h5>
             <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:16px">
-              <li><strong>Gestion Auto-École</strong> — CRUD complet PHP/MySQL</li>
-              <li><strong>E-Commerce</strong> — Plateforme avec panier, commandes, admin</li>
-              <li><strong>Portfolio BTS SIO</strong> — Ce site (HTML/CSS/JS + Three.js)</li>
+              <li><strong>config.php</strong> — Singleton PDO, gestion sessions, timeout verrous</li>
+              <li><strong>index.php</strong> — Dashboard avec cartes KPI, filtres et pagination</li>
+              <li><strong>saisie_mairie.php</strong> — Formulaire avec verrouillage pessimiste SQL</li>
+              <li><strong>login.php</strong> — Connexion par sélection de poste (sans mot de passe)</li>
+              <li><strong>mes_saisies.php / voir_saisie.php</strong> — Consultation des saisies</li>
+            </ul>
+          </div>
+          <div style="margin-top:12px">
+            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Base de données (4 tables) :</h5>
+            <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:16px">
+              <li><strong>utilisateurs</strong> · <strong>communes</strong> · <strong>elus</strong> · <strong>journal_activite</strong></li>
             </ul>
           </div>
         </div>
 
-        <div class="sit-card e5-card clip-reveal" style="border-color:rgba(155,89,245,.15)">
+        <div class="sit-card e5-card clip-reveal" style="border-color:rgba(232,168,56,.15)">
           <div class="sit-header">
-            <span class="sit-num" style="color:#9b59f5">CD</span>
-            <span class="sit-tag">Client Lourd</span>
+            <span class="sit-num" style="color:#E8A838">CD</span>
+            <span class="sit-tag">Client Lourd · Desktop</span>
           </div>
-          <h4 class="sit-name">Applications Desktop</h4>
+          <h4 class="sit-name">Muni-Prospection — Version Desktop (Python)</h4>
           <p class="sit-desc">
-            Développement d'applications installées sur le <strong>poste de l'utilisateur</strong>.
-            Architecture locale, C#/.NET, WPF. Le traitement s'effectue principalement
-            côté <strong>client</strong>.
+            Application desktop en <strong>Python 3.13</strong> avec <strong>CustomTkinter 5.2</strong>
+            et architecture <strong>MVC</strong> (Modèle / Vue / Contrôleur dans un seul fichier main.py).
+            Interface moderne avec header, barre de navigation et 3 onglets.
           </p>
           <div class="sit-skills">
-            <span>C#</span><span>.NET</span><span>WPF</span><span>SQL Server</span><span>Visual Studio</span>
+            <span>Python 3.13</span><span>CustomTkinter</span><span>MySQL Connector</span><span>tkinter Treeview</span><span>MVC</span>
           </div>
           <div style="margin-top:16px">
-            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Mes réalisations :</h5>
+            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Architecture MVC (main.py) :</h5>
             <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:16px">
-              <li><strong>Application de gestion WPF</strong> — Interface desktop C#/.NET</li>
-              <li><strong>Puissance 4</strong> — Jeu en C avec algorithme IA (terminal)</li>
+              <li><strong>Classe Modele</strong> — Requêtes SQL (CRUD communes, élus, saisies)</li>
+              <li><strong>Classe Vue</strong> — Interface CustomTkinter (header, navbar, 3 onglets)</li>
+              <li><strong>Classe Controleur</strong> — Logique métier, cache, export CSV</li>
+            </ul>
+          </div>
+          <div style="margin-top:12px">
+            <h5 style="font-family:var(--font-h);font-size:13px;color:var(--acc);margin-bottom:8px">Les 3 onglets :</h5>
+            <ul style="font-size:13px;color:var(--muted);line-height:1.8;padding-left:16px">
+              <li><strong>Dashboard</strong> — KPI en temps réel, statistiques</li>
+              <li><strong>Validation</strong> — Validation des saisies des prospecteurs</li>
+              <li><strong>Export</strong> — Export CSV des données filtrées</li>
             </ul>
           </div>
         </div>
@@ -540,33 +568,38 @@
             <tbody>
               <tr>
                 <td>Accès</td>
-                <td>Navigateur web</td>
-                <td>Application installée</td>
+                <td>Navigateur web (Apache / MAMP)</td>
+                <td>Application installée (Python)</td>
               </tr>
               <tr>
                 <td>Traitement</td>
-                <td>Côté serveur</td>
-                <td>Côté client</td>
+                <td>Côté serveur (PHP)</td>
+                <td>Côté client (Python)</td>
               </tr>
               <tr>
                 <td>Technologies</td>
-                <td>PHP, JS, HTML/CSS, MySQL</td>
-                <td>C#, .NET, WPF, SQL Server</td>
+                <td>PHP 8.3, Bootstrap 5.3, MySQL/PDO</td>
+                <td>Python 3.13, CustomTkinter, MySQL Connector</td>
+              </tr>
+              <tr>
+                <td>Architecture</td>
+                <td>Pages PHP (config, login, index, saisie…)</td>
+                <td>MVC dans main.py (Modele, Vue, Controleur)</td>
               </tr>
               <tr>
                 <td>Déploiement</td>
-                <td>Serveur web (Apache, Vercel)</td>
-                <td>Installation locale</td>
+                <td>Serveur web (Apache / MAMP)</td>
+                <td>Installation locale (pip install)</td>
               </tr>
               <tr>
-                <td>Mise à jour</td>
-                <td>Transparente (côté serveur)</td>
-                <td>Nécessite update client</td>
+                <td>Fonctionnalité clé</td>
+                <td>Verrouillage pessimiste SQL (concurrence)</td>
+                <td>Cache en mémoire + export CSV</td>
               </tr>
               <tr>
-                <td>Exemples</td>
-                <td>Auto-École, E-Commerce</td>
-                <td>Application WPF, Puissance 4</td>
+                <td>Projet</td>
+                <td>Muni-Prospection LAcarel (Web)</td>
+                <td>Muni-Prospection LAcarel (Desktop)</td>
               </tr>
             </tbody>
           </table>
@@ -585,9 +618,10 @@
 
       <div class="veille-intro clip-reveal">
         <p class="exam-desc">
-          La veille technologique est une activité essentielle pour tout développeur. Elle permet de
-          <strong>suivre les évolutions</strong> du secteur, d'<strong>anticiper les tendances</strong>
-          et de <strong>maintenir ses compétences à jour</strong>. Voici ma méthodologie et mes sujets de veille.
+          La veille technologique me permet de <strong>rester informé</strong> sur les nouvelles technologies
+          et les outils qui évoluent dans le développement web. Je la fais principalement en <strong>discutant
+          avec mes camarades de promo</strong>, en regardant des <strong>vidéos YouTube</strong>
+          et en suivant l'actualité tech sur <strong>Twitter/X</strong>.
         </p>
       </div>
 
@@ -597,47 +631,47 @@
         <div class="veille-method clip-reveal">
           <div class="vm-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <h3>Sources</h3>
+          <h3>Échanges</h3>
           <ul>
-            <li>GitHub Trending</li>
-            <li>Dev.to / Medium</li>
-            <li>Hacker News</li>
-            <li>YouTube (Fireship, Traversy)</li>
-            <li>Twitter / X (devs)</li>
+            <li>Discussions avec les camarades de promo</li>
+            <li>Partage de liens et de découvertes entre potes</li>
+            <li>Retours d'expérience sur les projets en cours</li>
           </ul>
         </div>
 
         <div class="veille-method clip-reveal">
           <div class="vm-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
             </svg>
           </div>
-          <h3>Outils</h3>
+          <h3>Vidéos & réseaux</h3>
           <ul>
-            <li>Feedly (agrégateur RSS)</li>
-            <li>Notion (notes structurées)</li>
-            <li>Google Alerts (mots-clés)</li>
-            <li>Newsletter (TLDR, ByteByteGo)</li>
-            <li>Reddit (r/webdev, r/devops)</li>
+            <li>YouTube (chaînes tech, tutos)</li>
+            <li>Twitter / X (développeurs, actus)</li>
+            <li>GitHub Trending (projets populaires)</li>
           </ul>
         </div>
 
         <div class="veille-method clip-reveal">
           <div class="vm-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
             </svg>
           </div>
           <h3>Fréquence</h3>
           <ul>
-            <li>Quotidienne : Twitter, GitHub</li>
-            <li>Hebdomadaire : newsletters</li>
-            <li>Mensuelle : articles de fond</li>
-            <li>Trimestrielle : bilan et mise à jour des compétences</li>
+            <li>Tous les jours : discussions, Twitter</li>
+            <li>Chaque semaine : vidéos YouTube</li>
+            <li>Quand un nouveau truc sort : on teste entre potes</li>
           </ul>
         </div>
 
@@ -650,51 +684,55 @@
 
         <div class="veille-sujet clip-reveal">
           <div class="vs-header">
-            <span class="vs-tag">Intelligence Artificielle</span>
-            <span class="vs-year">2024 — 2025</span>
+            <span class="vs-tag">IA & Outils</span>
+            <span class="vs-year">2025 — 2026</span>
           </div>
-          <h4>L'IA générative et son utilisation dans le développement</h4>
+          <h4>OpenClaw : l'assistant IA open-source qui a explosé en 2026</h4>
           <p>
-            Suivi de l'évolution des outils d'IA comme <strong>ChatGPT</strong>, <strong>Claude</strong>
-            et <strong>GitHub Copilot</strong>. Comment ces outils aident les développeurs au quotidien :
-            génération de code, débogage, rédaction de documentation.
-            Impact sur le métier de développeur.
+            <strong>OpenClaw</strong> est un assistant IA gratuit et open-source créé fin 2025.
+            Il permet d'<strong>automatiser des tâches</strong> sur son ordinateur via des applis de messagerie
+            comme Discord ou WhatsApp. Le projet a dépassé <strong>350 000 stars sur GitHub</strong> en quelques mois.
+            Un pote m'en a parlé et on a testé ensemble — c'est impressionnant pour automatiser
+            des trucs répétitifs quand on code.
           </p>
           <div class="vs-sources">
-            <span>OpenAI Blog</span><span>GitHub Blog</span><span>Dev.to</span><span>YouTube</span>
+            <span>GitHub</span><span>YouTube</span><span>Twitter/X</span><span>Discussions promo</span>
           </div>
         </div>
 
         <div class="veille-sujet clip-reveal">
           <div class="vs-header">
             <span class="vs-tag">Développement Web</span>
-            <span class="vs-year">2024 — 2025</span>
+            <span class="vs-year">2024 — 2026</span>
           </div>
-          <h4>Les frameworks JavaScript modernes : React et Next.js</h4>
+          <h4>Les nouveautés de React et PHP 8</h4>
           <p>
-            Suivi des évolutions de <strong>React</strong> et <strong>Next.js</strong>,
-            les nouveautés des frameworks front-end. Évolution des bonnes pratiques :
-            <strong>composants réutilisables</strong>, responsive design, accessibilité.
+            Suivi des nouvelles versions de <strong>React</strong> (composants, hooks)
+            et de <strong>PHP 8</strong> (typage strict, match, attributs).
+            En discutant avec mes camarades, on compare les <strong>frameworks</strong> qu'on utilise
+            en projet. Bootstrap 5, Tailwind CSS — on regarde ce qui est le plus simple
+            pour faire des interfaces propres et <strong>responsive</strong>.
           </p>
           <div class="vs-sources">
-            <span>React Blog</span><span>Dev.to</span><span>MDN Web Docs</span><span>YouTube</span>
+            <span>YouTube</span><span>MDN Web Docs</span><span>Twitter/X</span><span>Discussions promo</span>
           </div>
         </div>
 
         <div class="veille-sujet clip-reveal">
           <div class="vs-header">
-            <span class="vs-tag">Cybersécurité</span>
-            <span class="vs-year">2024 — 2025</span>
+            <span class="vs-tag">IA pour les devs</span>
+            <span class="vs-year">2024 — 2026</span>
           </div>
-          <h4>Sécurité des applications web : les bonnes pratiques</h4>
+          <h4>ChatGPT et Copilot : l'IA au quotidien pour coder</h4>
           <p>
-            Veille sur les failles courantes des applications web : <strong>injection SQL</strong>,
-            <strong>XSS</strong>, <strong>CSRF</strong>. Bonnes pratiques de sécurisation :
-            hashage des mots de passe, requêtes préparées, HTTPS.
-            Référentiel <strong>OWASP Top 10</strong>.
+            Comment <strong>ChatGPT</strong> et <strong>GitHub Copilot</strong> aident les développeurs
+            au quotidien : générer du code, débugger plus vite, comprendre des erreurs.
+            Avec mes potes on en parle souvent — tout le monde utilise au moins
+            <strong>un outil d'IA</strong> pour coder maintenant. On discute aussi des limites :
+            le code généré n'est pas toujours fiable, il faut quand même comprendre ce qu'on fait.
           </p>
           <div class="vs-sources">
-            <span>OWASP</span><span>ANSSI</span><span>CERT-FR</span><span>Cybermalveillance.gouv</span>
+            <span>YouTube</span><span>Twitter/X</span><span>GitHub</span><span>Discussions promo</span>
           </div>
         </div>
 
@@ -718,7 +756,7 @@
             <div class="cv-card-header">
               <div class="cv-name-block">
                 <h3 class="cv-name">Paul Cohen</h3>
-                <p class="cv-subtitle">Bachelor Efrei Paris — Développement & Data</p>
+                <p class="cv-subtitle">BTS SIO SLAM · EFREI Paris · Alternance sept. 2026</p>
               </div>
               <div class="cv-status">
                 <span class="dot-live"></span>
@@ -738,7 +776,7 @@
                 </div>
                 <div class="cv-info">
                   <span class="cv-info-label">Formation</span>
-                  <span class="cv-info-value">BTS SIO SLAM → Bachelor Dev Web & IA</span>
+                  <span class="cv-info-value">BTS SIO SLAM · EFREI Paris</span>
                 </div>
                 <div class="cv-info">
                   <span class="cv-info-label">Langues</span>
