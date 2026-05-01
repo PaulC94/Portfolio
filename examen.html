@@ -42,7 +42,7 @@
         <li><a href="#e4">E4</a></li>
         <li><a href="#e5">E5</a></li>
         <li><a href="#e6">E6</a></li>
-        <li><a href="epreuve-e5.html" class="nav-exam">C1→C18</a></li>
+        <li><a href="epreuve-e5.html" class="nav-exam">C1→C22</a></li>
         <li><a href="#veille">Veille</a></li>
         <li><a href="#cv-section">CV</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
@@ -56,12 +56,13 @@
   <!-- FULLSCREEN MENU -->
   <div id="menu-overlay">
     <nav class="menu-nav">
+      <a href="#contexte-orga" class="menu-link" data-n="00">Contexte stages</a>
       <a href="#e4"         class="menu-link" data-n="01">Épreuve E4</a>
       <a href="#e5"         class="menu-link" data-n="02">Épreuve E5</a>
       <a href="#e6"         class="menu-link" data-n="03">Épreuve E6</a>
-      <a href="#veille"     class="menu-link" data-n="03">Veille Techno</a>
-      <a href="#cv-section" class="menu-link" data-n="04">Mon CV</a>
-      <a href="index.html"  class="menu-link" data-n="05">← Portfolio</a>
+      <a href="#veille"     class="menu-link" data-n="04">Veille Techno</a>
+      <a href="#cv-section" class="menu-link" data-n="05">Mon CV</a>
+      <a href="index.html"  class="menu-link" data-n="06">← Portfolio</a>
     </nav>
     <div class="menu-foot">BTS SIO SLAM · EFREI Paris · 2ème année</div>
   </div>
@@ -109,6 +110,59 @@
     </div>
   </div>
 
+  <!-- ════════════════════ CONTEXTE ORGANISATIONS ════════════════════ -->
+  <section id="contexte-orga">
+    <div class="container">
+      <div class="sec-label clip-reveal">// 00 — Contexte des organisations</div>
+      <h2 class="sec-h2 clip-reveal">Mes lieux<br>de <em>stage.</em></h2>
+
+      <div class="sit-grid">
+
+        <div class="sit-card clip-reveal">
+          <div class="sit-header">
+            <span class="sit-num">S1</span>
+            <span class="sit-tag">Stage 1ère année · 2024 · 8 semaines</span>
+          </div>
+          <h4 class="sit-name">Mairie du Perreux-sur-Marne</h4>
+          <p class="sit-desc">
+            <strong>Collectivité territoriale</strong> (secteur public) — commune de 34 000 habitants dans le Val-de-Marne (94).
+            La DSI gère un parc de <strong>300 postes</strong> informatiques répartis entre la mairie principale et ses annexes.
+            Infrastructure : serveurs Windows Server, Active Directory, réseau switchs HP, firewall.
+          </p>
+          <p class="sit-desc" style="margin-top:8px">
+            <strong>Mon rôle :</strong> stagiaire au sein de la DSI (2 personnes). Support de niveau 2, mise en place
+            d'outils de supervision (Zabbix), sécurisation des accès distants (Guacamole), gestion du parc via GLPI.
+          </p>
+          <div class="sit-skills">
+            <span>Zabbix</span><span>GLPI</span><span>Active Directory</span><span>VLANs</span><span>Guacamole</span><span>Windows Server</span>
+          </div>
+        </div>
+
+        <div class="sit-card clip-reveal">
+          <div class="sit-header">
+            <span class="sit-num">S2</span>
+            <span class="sit-tag">Stage 2ème année · 2025 · 5 semaines</span>
+          </div>
+          <h4 class="sit-name">EXTIA — ESN (Sèvres)</h4>
+          <p class="sit-desc">
+            <strong>Entreprise de Services Numériques (ESN)</strong> — environ 3 000 collaborateurs en France.
+            Basée à Sèvres (92), EXTIA intervient sur des projets IT pour de grands comptes.
+            La DSI interne gère l'infrastructure, le Modern Workplace et le support aux consultants.
+          </p>
+          <p class="sit-desc" style="margin-top:8px">
+            <strong>Mon rôle :</strong> stagiaire DSI au sein de l'équipe Support & DevOps (5 personnes).
+            Automatisation avec Ansible, développement d'une interface React.js, déploiement de postes
+            via Intune/Autopilot, monitoring Zabbix.
+          </p>
+          <div class="sit-skills">
+            <span>Ansible</span><span>React.js</span><span>Intune</span><span>Autopilot</span><span>Zabbix</span><span>Azure AD</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════════════ E4 ════════════════════ -->
   <section id="e4">
     <div class="container">
@@ -121,131 +175,63 @@
           <span class="badge-coef">Coefficient 4</span>
         </div>
         <p class="exam-desc">
-          L'épreuve E4 évalue la capacité du candidat à <strong>répondre aux incidents</strong>,
-          à <strong>gérer le patrimoine informatique</strong> et à <strong>mettre à disposition des utilisateurs
-          un service informatique</strong>. Elle s'appuie sur des situations professionnelles vécues en stage ou en entreprise.
+          L'épreuve E4 est une <strong>épreuve écrite de 4 heures</strong> portant sur un cas pratique.
+          Elle évalue la capacité du candidat à analyser une situation d'entreprise et à proposer des solutions
+          pour le <strong>support</strong>, la <strong>mise à disposition de services informatiques</strong>
+          et la <strong>cybersécurité</strong>. Le sujet est basé sur un contexte organisationnel fourni le jour de l'épreuve.
         </p>
       </div>
 
-      <!-- E4 Competences Grid -->
-      <div class="comp-grid">
-
-        <div class="comp-card clip-reveal">
-          <div class="comp-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4"/>
-              <polygon points="12 15 17 21 7 21 12 15"/>
-            </svg>
-          </div>
-          <h3 class="comp-title">Gérer le patrimoine informatique</h3>
-          <ul class="comp-list">
-            <li>Recenser et identifier les ressources numériques</li>
-            <li>Exploiter des référentiels, normes et standards</li>
-            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
-            <li>Vérifier les conditions de la continuité d'un service</li>
-            <li>Gérer des sauvegardes</li>
-          </ul>
-        </div>
-
-        <div class="comp-card clip-reveal">
-          <div class="comp-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3 class="comp-title">Répondre aux incidents et aux demandes</h3>
-          <ul class="comp-list">
-            <li>Collecter, suivre et orienter des demandes</li>
-            <li>Traiter des demandes concernant les services réseau et système</li>
-            <li>Traiter des demandes concernant les applications</li>
-          </ul>
-        </div>
-
-        <div class="comp-card clip-reveal">
-          <div class="comp-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <h3 class="comp-title">Développer la présence en ligne</h3>
-          <ul class="comp-list">
-            <li>Participer à la valorisation de l'image de l'organisation sur les médias numériques</li>
-            <li>Référencer les services en ligne de l'organisation</li>
-            <li>Participer à l'évolution d'un site Web</li>
-          </ul>
-        </div>
-
-        <div class="comp-card clip-reveal">
-          <div class="comp-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3 class="comp-title">Travailler en mode projet</h3>
-          <ul class="comp-list">
-            <li>Analyser les objectifs et les modalités d'organisation d'un projet</li>
-            <li>Planifier les activités</li>
-            <li>Évaluer les indicateurs de suivi d'un projet</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- E4 - Mes situations professionnelles -->
+      <!-- Ce que j'ai préparé pour E4 -->
       <div class="situations-block clip-reveal">
-        <h3 class="sit-title">Mes situations professionnelles — E4</h3>
+        <h3 class="sit-title">Compétences travaillées pour l'E4</h3>
         <div class="sit-grid">
 
           <div class="sit-card">
             <div class="sit-header">
-              <span class="sit-num">SP1</span>
-              <span class="sit-tag">Stage EXTIA · 2025</span>
+              <span class="sit-num">01</span>
+              <span class="sit-tag">Bloc 1 — Support</span>
             </div>
-            <h4 class="sit-name">Monitoring d'infrastructure via Zabbix</h4>
+            <h4 class="sit-name">Gestion du patrimoine informatique</h4>
             <p class="sit-desc">
-              Mise en place d'un outil de supervision <strong>Zabbix</strong> pour monitorer
-              l'infrastructure hybride. Gestion des alertes et résolution d'incidents critiques
-              sur le parc serveur de l'ESN.
+              Inventaire et gestion d'un parc de <strong>300 postes</strong> via GLPI.
+              Rédaction d'un PRA/PCA, gestion des sauvegardes MySQL, charte informatique.
+              Travail réalisé lors du <strong>stage à la Mairie</strong>.
             </p>
             <div class="sit-skills">
-              <span>Zabbix</span><span>Linux</span><span>Monitoring</span><span>Incidents</span>
+              <span>GLPI</span><span>PRA/PCA</span><span>Sauvegardes</span><span>Charte IT</span>
             </div>
           </div>
 
           <div class="sit-card">
             <div class="sit-header">
-              <span class="sit-num">SP2</span>
-              <span class="sit-tag">Stage Mairie · 2024</span>
+              <span class="sit-num">02</span>
+              <span class="sit-tag">Bloc 1 — Support</span>
             </div>
-            <h4 class="sit-name">Support Helpdesk & gestion de parc</h4>
+            <h4 class="sit-name">Résolution d'incidents et support</h4>
             <p class="sit-desc">
-              Support de <strong>niveau 2</strong> et gestion d'un parc de <strong>300 postes</strong>
-              informatiques. Résolution d'incidents réseaux, systèmes et applicatifs
-              pour les agents de la mairie.
+              Support de niveau 2 via ticketing GLPI. Résolution d'incidents réseau
+              (switch HP en panne), système (disque serveur saturé) et applicatif
+              (logiciel comptable ralenti). Stage <strong>Mairie</strong> + <strong>EXTIA</strong>.
             </p>
             <div class="sit-skills">
-              <span>Helpdesk</span><span>Active Directory</span><span>Windows</span><span>Réseau</span>
+              <span>GLPI</span><span>Zabbix</span><span>Diagnostic</span><span>Réseau</span>
             </div>
           </div>
 
           <div class="sit-card">
             <div class="sit-header">
-              <span class="sit-num">SP3</span>
-              <span class="sit-tag">Stage Mairie · 2024</span>
+              <span class="sit-num">03</span>
+              <span class="sit-tag">Bloc 3 — Cybersécurité</span>
             </div>
-            <h4 class="sit-name">Sécurisation des accès distants</h4>
+            <h4 class="sit-name">Sécurisation des accès et du réseau</h4>
             <p class="sit-desc">
-              Implémentation d'<strong>Apache Guacamole</strong> pour sécuriser le télétravail
-              des agents. Segmentation via <strong>VLANs</strong> pour isoler les flux sensibles
-              et renforcer la politique de sécurité.
+              Déploiement d'<strong>Apache Guacamole</strong> pour le télétravail sécurisé.
+              Segmentation réseau via <strong>VLANs</strong>. Gestion des habilitations Active Directory.
+              Déploiement sécurisé de postes via <strong>Intune/Autopilot</strong>.
             </p>
             <div class="sit-skills">
-              <span>Apache Guacamole</span><span>VLAN</span><span>Sécurité</span><span>Linux</span>
+              <span>Guacamole</span><span>VLANs</span><span>Active Directory</span><span>Intune</span>
             </div>
           </div>
 
@@ -267,145 +253,89 @@
           <span class="badge-coef">Coefficient 4</span>
         </div>
         <p class="exam-desc">
-          L'épreuve E5 consiste à présenter un <strong>portfolio de compétences professionnelles</strong>
-          démontrant la maîtrise des savoirs et savoir-faire acquis en stage et en projet.
-          Le candidat valorise ses réalisations et les compétences mobilisées à travers
-          un <strong>support numérique</strong> (ce portfolio).
+          L'épreuve E5 est un <strong>oral de 40 minutes</strong> (10 min de présentation + 30 min d'entretien).
+          Le candidat présente un <strong>portfolio numérique</strong> couvrant les compétences du
+          <strong>Bloc 2 — Production et fourniture de services informatiques</strong>.
+          Le jury évalue la couverture des compétences, la qualité des réalisations et la maîtrise technique.
         </p>
       </div>
 
-      <!-- E5 3D + Competences -->
+      <!-- Les 6 catégories du Bloc 2 -->
       <div class="e5-layout">
         <canvas id="e5-3d" class="clip-reveal" aria-hidden="true"></canvas>
 
         <div class="e5-comp-list">
 
           <div class="e5-comp clip-reveal">
-            <div class="e5-comp-num">01</div>
+            <div class="e5-comp-num">B2.1</div>
             <div class="e5-comp-content">
-              <h3>Concevoir et développer une solution applicative</h3>
-              <p>Analyser un besoin, modéliser (UML/Merise), développer et tester des composants logiciels.</p>
+              <h3>Gérer le patrimoine informatique</h3>
+              <p>Recenser les ressources, normes, habilitations, continuité de service, sauvegardes. <strong>6 compétences (C1→C6)</strong></p>
             </div>
           </div>
 
           <div class="e5-comp clip-reveal">
-            <div class="e5-comp-num">02</div>
+            <div class="e5-comp-num">B2.2</div>
             <div class="e5-comp-content">
-              <h3>Assurer la maintenance corrective ou évolutive</h3>
-              <p>Diagnostiquer, corriger les dysfonctionnements, faire évoluer les applications existantes.</p>
+              <h3>Répondre aux incidents et aux demandes</h3>
+              <p>Collecter et traiter les demandes réseau, système et applicatif. <strong>3 compétences (C7→C9)</strong></p>
             </div>
           </div>
 
           <div class="e5-comp clip-reveal">
-            <div class="e5-comp-num">03</div>
+            <div class="e5-comp-num">B2.3</div>
             <div class="e5-comp-content">
-              <h3>Gérer les données</h3>
-              <p>Concevoir et exploiter une base de données, requêtes SQL avancées, administration des SGBD.</p>
+              <h3>Développer la présence en ligne</h3>
+              <p>Valoriser l'image, référencer les services, faire évoluer un site web. <strong>3 compétences (C10→C12)</strong></p>
             </div>
           </div>
 
           <div class="e5-comp clip-reveal">
-            <div class="e5-comp-num">04</div>
+            <div class="e5-comp-num">B2.4</div>
             <div class="e5-comp-content">
-              <h3>Déployer et intégrer</h3>
-              <p>Mettre en production, CI/CD, conteneurisation (Docker), tests et documentation technique.</p>
+              <h3>Travailler en mode projet</h3>
+              <p>Analyser les objectifs, planifier, évaluer les indicateurs de suivi. <strong>3 compétences (C13→C15)</strong></p>
+            </div>
+          </div>
+
+          <div class="e5-comp clip-reveal">
+            <div class="e5-comp-num">B2.5</div>
+            <div class="e5-comp-content">
+              <h3>Mettre à disposition un service</h3>
+              <p>Tests d'intégration, déploiement, accompagnement des utilisateurs. <strong>3 compétences (C16→C18)</strong></p>
+            </div>
+          </div>
+
+          <div class="e5-comp clip-reveal">
+            <div class="e5-comp-num">B2.6</div>
+            <div class="e5-comp-content">
+              <h3>Organiser son développement professionnel</h3>
+              <p>Environnement d'apprentissage, veille technologique, identité pro, projet pro. <strong>4 compétences (C19→C22)</strong></p>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- E5 - Mes réalisations -->
-      <div class="situations-block clip-reveal">
-        <h3 class="sit-title">Mes réalisations professionnelles — E5</h3>
-        <div class="sit-grid">
-
-          <div class="sit-card e5-card">
-            <div class="sit-header">
-              <span class="sit-num">RP1</span>
-              <span class="sit-tag">Stage EXTIA · 2025</span>
-            </div>
-            <h4 class="sit-name">Interface de gestion IT en React.js</h4>
-            <p class="sit-desc">
-              Développement d'une interface de gestion interne en <strong>React.js</strong>
-              pour le support IT. Dashboard interactif, gestion des tickets et
-              visualisation des métriques en temps réel.
-            </p>
-            <div class="sit-skills">
-              <span>React.js</span><span>JavaScript</span><span>API REST</span><span>Tailwind</span>
-            </div>
-          </div>
-
-          <div class="sit-card e5-card">
-            <div class="sit-header">
-              <span class="sit-num">RP2</span>
-              <span class="sit-tag">Stage EXTIA · 2025</span>
-            </div>
-            <h4 class="sit-name">Déploiement et configuration de postes</h4>
-            <p class="sit-desc">
-              Participation au <strong>déploiement de postes utilisateurs</strong> et à la
-              configuration de l'environnement de travail. Utilisation des outils
-              <strong>Microsoft Intune</strong> pour la gestion à distance des équipements.
-            </p>
-            <div class="sit-skills">
-              <span>Intune</span><span>Windows</span><span>Active Directory</span><span>Support</span>
-            </div>
-          </div>
-
-          <div class="sit-card e5-card">
-            <div class="sit-header">
-              <span class="sit-num">RP3</span>
-              <span class="sit-tag">Projet personnel</span>
-            </div>
-            <h4 class="sit-name">NeoAsset Dashboard</h4>
-            <p class="sit-desc">
-              Dashboard interactif de gestion d'assets numériques.
-              <strong>TypeScript + React</strong> avec graphiques temps réel,
-              API REST et gestion de portefeuille.
-            </p>
-            <div class="sit-skills">
-              <span>TypeScript</span><span>React</span><span>API REST</span><span>Tailwind</span>
-            </div>
-          </div>
-
-          <div class="sit-card e5-card">
-            <div class="sit-header">
-              <span class="sit-num">RP4</span>
-              <span class="sit-tag">Projet scolaire</span>
-            </div>
-            <h4 class="sit-name">Gestion Auto-École (CRUD PHP)</h4>
-            <p class="sit-desc">
-              Application web complète de gestion d'auto-école : <strong>PHP + MySQL</strong>,
-              planning, gestion élèves/moniteurs/examens.
-              Interface d'administration avec CRUD complet.
-            </p>
-            <div class="sit-skills">
-              <span>PHP</span><span>MySQL</span><span>HTML/CSS</span><span>CRUD</span>
-            </div>
-          </div>
-
-          <div class="sit-card e5-card">
-            <div class="sit-header">
-              <span class="sit-num">RP5</span>
-              <span class="sit-tag">Projet personnel</span>
-            </div>
-            <h4 class="sit-name">E-Commerce PHP/MySQL</h4>
-            <p class="sit-desc">
-              Plateforme e-commerce complète avec panier, gestion produits,
-              système de commandes et interface d'administration.
-              Architecture <strong>MVC en PHP</strong>.
-            </p>
-            <div class="sit-skills">
-              <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>MVC</span>
-            </div>
-          </div>
-
-        </div>
+      <!-- CTA vers le tableau complet -->
+      <div class="situations-block clip-reveal" style="text-align:center; padding:40px 0">
+        <h3 class="sit-title">22 compétences documentées avec preuves</h3>
+        <p class="exam-desc" style="max-width:600px;margin:0 auto 32px">
+          Chaque compétence est détaillée avec sa description, comment je l'ai validée,
+          le projet associé, les technologies utilisées et des captures d'écran.
+        </p>
+        <a href="epreuve-e5.html" class="cta-main" style="display:inline-flex">
+          Voir le tableau de compétences C1→C22
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
-      <!-- Tableau de synthèse E5 -->
+      <!-- Tableau de synthèse E5 — à remplir par Paul -->
       <div class="synthese-block clip-reveal">
         <h3 class="sit-title">Tableau de synthèse — Compétences E5</h3>
+        <p class="exam-desc" style="margin-bottom:20px; font-size:13px; color:var(--muted)">
+          Ce tableau fait le lien entre chaque compétence du Bloc 2 et les réalisations associées.
+        </p>
         <div class="table-wrap">
           <table class="synthese-table">
             <thead>
@@ -418,34 +348,136 @@
             </thead>
             <tbody>
               <tr>
-                <td>Concevoir & développer</td>
-                <td>Développer des composants d'accès aux données</td>
-                <td>NeoAsset Dashboard, Auto-École</td>
-                <td>Stage + Projet</td>
+                <td>B2.1 — Patrimoine</td>
+                <td>Recenser les ressources numériques (C1)</td>
+                <td>Inventaire parc GLPI (13 machines)</td>
+                <td>Stage Mairie · 2024</td>
               </tr>
               <tr>
-                <td>Concevoir & développer</td>
-                <td>Développer la partie front-end d'une interface utilisateur web</td>
-                <td>Interface IT React.js (EXTIA)</td>
-                <td>Stage 2ème année</td>
+                <td>B2.1 — Patrimoine</td>
+                <td>Exploiter référentiels et normes (C2)</td>
+                <td>Procédure incidents ITIL v4</td>
+                <td>Stage Mairie · 2024</td>
               </tr>
               <tr>
-                <td>Gérer les données</td>
-                <td>Concevoir / adapter une base de données</td>
-                <td>Auto-École, E-Commerce</td>
-                <td>Projet scolaire</td>
+                <td>B2.1 — Patrimoine</td>
+                <td>Vérifier les habilitations (C3)</td>
+                <td>Profils GLPI + Active Directory</td>
+                <td>Stage Mairie · 2024</td>
               </tr>
               <tr>
-                <td>Maintenance</td>
-                <td>Corriger et faire évoluer une application</td>
-                <td>Scan Tracker (Next.js)</td>
+                <td>B2.1 — Patrimoine</td>
+                <td>Continuité de service (C4)</td>
+                <td>PRA / PCA</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.1 — Patrimoine</td>
+                <td>Gérer des sauvegardes (C5)</td>
+                <td>Sauvegarde BDD GLPI (mysqldump)</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.1 — Patrimoine</td>
+                <td>Règles d'utilisation (C6)</td>
+                <td>Charte informatique</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.2 — Incidents</td>
+                <td>Collecter et orienter les demandes (C7)</td>
+                <td>Ticketing GLPI (10 tickets)</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.2 — Incidents</td>
+                <td>Traiter demandes réseau/système (C8)</td>
+                <td>Incident switch HP + alerte Zabbix</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.2 — Incidents</td>
+                <td>Traiter demandes applicatives (C9)</td>
+                <td>Incident logiciel comptabilité</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.3 — En ligne</td>
+                <td>Valoriser l'image (C10)</td>
+                <td>Profil LinkedIn professionnel</td>
                 <td>Projet personnel</td>
               </tr>
               <tr>
-                <td>Déployer</td>
-                <td>Automatiser le déploiement</td>
-                <td>Déploiement postes (EXTIA)</td>
-                <td>Stage 2ème année</td>
+                <td>B2.3 — En ligne</td>
+                <td>Référencer les services (C11)</td>
+                <td>SEO du portfolio (HTML sémantique)</td>
+                <td>Projet personnel</td>
+              </tr>
+              <tr>
+                <td>B2.3 — En ligne</td>
+                <td>Évolution d'un site Web (C12)</td>
+                <td>Portfolio BTS SIO (ce site)</td>
+                <td>Projet personnel</td>
+              </tr>
+              <tr>
+                <td>B2.4 — Projet</td>
+                <td>Analyser objectifs d'un projet (C13)</td>
+                <td>Cahier des charges Auto-École</td>
+                <td>Projet scolaire · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.4 — Projet</td>
+                <td>Planifier les activités (C14)</td>
+                <td>Organisation Hackathon Manga Dash</td>
+                <td>Hackathon · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.4 — Projet</td>
+                <td>Évaluer les indicateurs (C15)</td>
+                <td>Suivi KPI Hackathon</td>
+                <td>Hackathon · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.5 — Service</td>
+                <td>Tests d'intégration (C16)</td>
+                <td>Tests CRUD Auto-École + E-Commerce</td>
+                <td>Projets scolaires · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.5 — Service</td>
+                <td>Déployer un service (C17)</td>
+                <td>GLPI (MAMP) + Portfolio (Vercel)</td>
+                <td>Stage + Projet</td>
+              </tr>
+              <tr>
+                <td>B2.5 — Service</td>
+                <td>Accompagner les utilisateurs (C18)</td>
+                <td>Guide utilisateur GLPI</td>
+                <td>Stage Mairie · 2024</td>
+              </tr>
+              <tr>
+                <td>B2.6 — Pro</td>
+                <td>Environnement d'apprentissage (C19)</td>
+                <td>IntelliJ IDEA, GitHub, documentation</td>
+                <td>Continu · 2024-2026</td>
+              </tr>
+              <tr>
+                <td>B2.6 — Pro</td>
+                <td>Veille informationnelle (C20)</td>
+                <td>YouTube, Twitter/X, discussions promo</td>
+                <td>Continu · 2024-2026</td>
+              </tr>
+              <tr>
+                <td>B2.6 — Pro</td>
+                <td>Identité professionnelle (C21)</td>
+                <td>LinkedIn + Portfolio + GitHub</td>
+                <td>Continu · 2024-2026</td>
+              </tr>
+              <tr>
+                <td>B2.6 — Pro</td>
+                <td>Projet professionnel (C22)</td>
+                <td>Alternance sept. 2026, Bachelor</td>
+                <td>2024-2026</td>
               </tr>
             </tbody>
           </table>
@@ -791,10 +823,10 @@
                   <span class="cv-tag dev">JavaScript</span>
                   <span class="cv-tag dev">React.js</span>
                   <span class="cv-tag dev">PHP</span>
-                  <span class="cv-tag dev">C#/.NET</span>
-                  <span class="cv-tag dev">C</span>
+                  <span class="cv-tag dev">Python</span>
+                  <span class="cv-tag dev">CustomTkinter</span>
                   <span class="cv-tag data">MySQL</span>
-                  <span class="cv-tag data">SQL Server</span>
+                  <span class="cv-tag dev">C</span>
                   <span class="cv-tag cloud">Git / GitHub</span>
                   <span class="cv-tag cloud">Docker</span>
                   <span class="cv-tag cloud">Vercel</span>
@@ -867,7 +899,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <span class="footer-copy">© 2025 Paul Cohen — BTS SIO SLAM · EFREI Paris · E4 / E5 / E6</span>
+      <span class="footer-copy">© 2026 Paul Cohen — BTS SIO SLAM · EFREI Paris · E4 / E5 / E6</span>
       <span class="footer-code">while(alive) { learn(); build(); }</span>
     </div>
   </footer>

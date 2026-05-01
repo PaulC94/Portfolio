@@ -145,7 +145,7 @@ function initNav() {
 function initTypewriter() {
   const el = document.getElementById('tw-out');
   if (!el) return;
-  const words = ['BTS SIO SLAM_', 'Développeur Web_', 'PHP · React · C#_', 'En alternance bientôt_'];
+  const words = ['BTS SIO SLAM_', 'Développeur Web_', 'PHP · React · Python_', 'En alternance bientôt_'];
   let wi = 0, ci = 0, del = false;
 
   function tick() {
@@ -617,4 +617,27 @@ document.addEventListener('DOMContentLoaded', () => {
   init3DAbout();
   init3DSkills();
   init3DCube();
+  initStageCards();
 });
+
+/* ═══════════════════════════════════════════════════════════
+   STAGE CARDS — Click to expand detail
+═══════════════════════════════════════════════════════════ */
+function initStageCards() {
+  document.querySelectorAll('.tl-card-clickable').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle if clicking a link inside
+      if (e.target.closest('a')) return;
+
+      const wasOpen = card.classList.contains('open');
+
+      // Close all other open cards
+      document.querySelectorAll('.tl-card-clickable.open').forEach(c => {
+        if (c !== card) c.classList.remove('open');
+      });
+
+      // Toggle this card
+      card.classList.toggle('open', !wasOpen);
+    });
+  });
+}
