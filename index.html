@@ -4,310 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paul Cohen — BTS SIO SLAM · Portfolio</title>
+  <meta name="description" content="Portfolio de Paul Cohen, étudiant en BTS SIO SLAM à l'EFREI Paris. Projets web, stages en infrastructure & DevOps, compétences C1 à C22." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='16' width='100' height='100' fill='%230a0a0f'/><text x='50' y='72' font-size='60' font-family='sans-serif' font-weight='800' fill='%23D6FF4D' text-anchor='middle'>P</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&family=Outfit:wght@300..600&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body>
-
-  <!-- CURSOR -->
-  <div id="cursor"></div>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-wrap">
-      <svg class="loader-svg" viewBox="0 0 120 120">
-        <circle cx="60" cy="60" r="52" fill="none" stroke="#1a1a1a" stroke-width="2"/>
-        <circle cx="60" cy="60" r="52" fill="none" stroke="#D6FF4D" stroke-width="2"
-                stroke-dasharray="326" stroke-dashoffset="326" id="loaderCircle">
-          <animate attributeName="stroke-dashoffset" from="326" to="0" dur="1.2s" fill="freeze"/>
-        </circle>
-        <text x="60" y="67" text-anchor="middle" font-family="Bricolage Grotesque" font-size="22" font-weight="800" fill="#D6FF4D">P</text>
-      </svg>
-      <p class="loader-label" id="loaderLabel">Chargement…</p>
-    </div>
-  </div>
 
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
       <a href="#hero" class="logo">PAUL<span>.</span></a>
-      <ul class="nav-ul">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#parcours">Parcours</a></li>
-        <li><a href="examen.html" class="nav-exam">BTS E4/E5/E6</a></li>
-        <li><a href="epreuve-e5.html" class="nav-exam">C1→C22</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-      <button id="burger" aria-label="Menu">
-        <span></span><span></span>
-      </button>
+      <div class="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#bts">BTS</a>
+        <a href="#veille">Veille</a>
+        <a href="#cv">CV</a>
+        <a href="epreuve-e5.html" class="nav-accent">C1→C22</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+      <button id="burger" aria-label="Menu"><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- FULLSCREEN MENU -->
-  <div id="menu-overlay">
-    <nav class="menu-nav">
-      <a href="#about"    class="menu-link" data-n="01">À propos</a>
-      <a href="#skills"   class="menu-link" data-n="02">Skills</a>
-      <a href="#projects" class="menu-link" data-n="03">Projets</a>
-      <a href="#parcours"   class="menu-link" data-n="04">Parcours</a>
-      <a href="examen.html" class="menu-link" data-n="05">BTS E4/E5/E6</a>
-      <a href="#contact"    class="menu-link" data-n="06">Contact</a>
-    </nav>
-    <div class="menu-foot">BTS SIO SLAM · EFREI Paris · 2ème année</div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu">
+    <a href="#about">À propos</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#bts">BTS E5/E6</a>
+    <a href="#veille">Veille</a>
+    <a href="#cv">CV</a>
+    <a href="epreuve-e5.html">C1 → C22</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- ════════════════════ HERO ════════════════════ -->
+  <!-- ═══════ HERO ═══════ -->
   <section id="hero">
-    <div class="hero-bg-text" aria-hidden="true">PAUL</div>
-    <canvas id="hero3d" aria-hidden="true"></canvas>
-
-    <div class="hero-inner">
-      <div class="hero-label">
-        <span class="dot-live"></span>
-        BTS SIO · SLAM · 2<sup>ème</sup> année · EFREI Paris
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-tag">BTS SIO · SLAM · 2ème année · EFREI Paris</p>
+        <h1 class="hero-name">PAUL COHEN</h1>
+        <p class="hero-role">Futur DevOps · Développeur Web & Infra</p>
+        <p class="hero-desc">
+          Étudiant en <strong>BTS SIO SLAM</strong> à l'EFREI Paris.
+          Je développe des applis web et desktop, j'automatise des infras
+          et je vise le <strong>DevOps</strong>.<br>
+          En alternance dès <strong>septembre 2026</strong>.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">
+            Voir les projets
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">Me contacter →</a>
+        </div>
+        <div class="hero-techs">
+          <span class="tech-tag">HTML / CSS</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">Linux</span>
+        </div>
       </div>
-
-      <h1 class="hero-name">
-        <span class="scramble" data-final="PAUL">PAUL</span>
-      </h1>
-
-      <div class="hero-role">
-        <span id="tw-out"></span><span class="tw-cur">_</span>
-      </div>
-
-      <p class="hero-sub">
-        Étudiant en <strong>BTS SIO SLAM</strong> à l'EFREI Paris.
-        Je développe des applications web et desktop — du front au back.<br>
-        En alternance dès <strong>septembre 2026</strong>.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="cta-main">
-          Voir les projets
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#contact" class="cta-sec">Me contacter →</a>
-      </div>
-
-      <div class="hero-tags">
-        <span class="h-tag">React</span>
-        <span class="h-tag">Node.js</span>
-        <span class="h-tag">PHP</span>
-        <span class="h-tag">Python</span>
-        <span class="h-tag">MySQL</span>
-        <span class="h-tag">Git</span>
-      </div>
-    </div>
-
-    <div class="hero-scroll-line">
-      <div class="scroll-text">scroll</div>
-      <div class="scroll-bar"><div class="scroll-fill"></div></div>
     </div>
   </section>
 
-  <!-- TAPE -->
-  <div class="tape" aria-hidden="true">
-    <div class="tape-track">
-      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · Python · CustomTkinter · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
-      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · Python · CustomTkinter · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
-      <span>HTML · CSS · JavaScript · TypeScript · React · Node.js · Express · PHP · Python · CustomTkinter · MySQL · SQL · Git · Tailwind · Vite · Zabbix · </span>
-    </div>
-  </div>
-
-  <!-- ════════════════════ ABOUT ════════════════════ -->
+  <!-- ═══════ ABOUT ═══════ -->
   <section id="about">
     <div class="container">
-      <div class="sec-label clip-reveal">// 01 — À propos</div>
+      <p class="sec-label">// 01 — À propos</p>
+      <h2 class="sec-title">Étudiant en<br><em>BTS SIO SLAM.</em></h2>
 
       <div class="about-grid">
-
-        <div class="about-left clip-reveal">
-          <h2 class="sec-h2">
-            Étudiant en<br>
-            <em>BTS SIO<br>SLAM.</em>
-          </h2>
+        <div>
           <p class="about-bio">
             Je suis en 2ème année de <strong>BTS SIO option SLAM</strong> à l'EFREI Paris.
             Avant ça, j'ai eu mon Bac Général (spé <strong>Maths</strong> &amp; <strong>SES</strong>)
             au Lycée Paul Doumer au Perreux-sur-Marne.
           </p>
-          <p class="about-bio" style="margin-top:16px">
-            Je code des applications web et desktop — <strong>PHP</strong>, <strong>React</strong>,
-            <strong>Python</strong>, bases de données <strong>MySQL</strong>.
-            Je serai en alternance à partir de <strong>septembre 2026</strong>.
+          <p class="about-bio">
+            Je code des applications web et desktop — <strong>HTML</strong>, <strong>React</strong>,
+            <strong>Java</strong>, bases de données <strong>MySQL</strong>.
+            Côté infra, j'aime le monitoring (<strong>Zabbix</strong>), l'automatisation (<strong>Ansible</strong>)
+            et le déploiement (<strong>Docker</strong>, <strong>CI/CD</strong>).
+            Mon objectif : devenir <strong>DevOps</strong>.
           </p>
-
-          <div class="about-pills">
-            <span class="a-pill">🎓 EFREI Paris</span>
-            <span class="a-pill">📍 Île-de-France</span>
-            <span class="a-pill active-pill">✅ Alternance sept. 2026</span>
-            <span class="a-pill">🌍 FR · EN</span>
+          <div class="pills">
+            <span class="pill">🎓 EFREI Paris</span>
+            <span class="pill">📍 Île-de-France</span>
+            <span class="pill active">✅ Alternance sept. 2026</span>
+            <span class="pill">🎯 DevOps</span>
+            <span class="pill">🌍 FR · EN</span>
           </div>
         </div>
 
-        <div class="about-right">
-          <!-- 3D sphere here -->
-          <canvas id="about3d" class="clip-reveal"></canvas>
-
-          <div class="counters-grid clip-reveal">
-            <div class="counter-box">
-              <span class="c-num" data-target="6">0</span>
-              <span class="c-label">Projets<br>réalisés</span>
-            </div>
-            <div class="counter-box accent-box">
-              <span class="c-num" data-target="13">0</span>
-              <span class="c-label">Semaines<br>de stage</span>
-            </div>
-            <div class="counter-box">
-              <span class="c-num" data-target="10">0</span>
-              <span class="c-label">Technologies<br>maîtrisées</span>
-            </div>
-            <div class="counter-box">
-              <span class="c-num" data-target="2">0</span>
-              <span class="c-label">Années<br>de formation</span>
-            </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-num" data-target="6">0</span>
+            <span class="stat-label">Projets<br>réalisés</span>
+          </div>
+          <div class="stat-box accent">
+            <span class="stat-num" data-target="13">0</span>
+            <span class="stat-label">Semaines<br>de stage</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" data-target="10">0</span>
+            <span class="stat-label">Technologies<br>maîtrisées</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" data-target="2">0</span>
+            <span class="stat-label">Années<br>de formation</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ SKILLS ════════════════════ -->
+  <!-- ═══════ SKILLS ═══════ -->
   <section id="skills">
     <div class="container">
-      <div class="sec-label clip-reveal">// 02 — Compétences techniques</div>
-
-      <div class="skills-head">
-        <h2 class="sec-h2 clip-reveal">
-          Ce que je<br>maîtrise.
-        </h2>
-        <canvas id="skills3d" class="clip-reveal"></canvas>
-      </div>
+      <p class="sec-label">// 02 — Compétences</p>
+      <h2 class="sec-title">Ce que je<br><em>maîtrise.</em></h2>
 
       <div class="skills-grid">
-
-        <div class="skill-col clip-reveal">
-          <h3 class="skill-col-title">
-            <span class="skill-col-icon">&lt;/&gt;</span>
-            Frontend
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">JavaScript</span><span class="sk-pct">90%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">React</span><span class="sk-pct">85%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">TypeScript</span><span class="sk-pct">75%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">HTML5 / CSS3</span><span class="sk-pct">95%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:95%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Tailwind CSS</span><span class="sk-pct">80%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
-            </div>
-          </div>
+        <div class="skill-col">
+          <h3 class="skill-col-title"><span>&lt;/&gt;</span> Frontend</h3>
+          <ul class="skill-list">
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">React.js</li>
+            <li class="skill-item">TypeScript</li>
+            <li class="skill-item">HTML5 / CSS3</li>
+            <li class="skill-item">Tailwind CSS</li>
+          </ul>
         </div>
-
-        <div class="skill-col clip-reveal">
-          <h3 class="skill-col-title">
-            <span class="skill-col-icon">⚙</span>
-            Backend
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Node.js / Express</span><span class="sk-pct">80%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">PHP</span><span class="sk-pct">75%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Python</span><span class="sk-pct">75%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">CustomTkinter</span><span class="sk-pct">65%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:65%"></div></div>
-            </div>
-          </div>
+        <div class="skill-col">
+          <h3 class="skill-col-title"><span>⚙</span> Backend</h3>
+          <ul class="skill-list">
+            <li class="skill-item">Node.js / Express</li>
+            <li class="skill-item">Java</li>
+            <li class="skill-item">JavaFX</li>
+            <li class="skill-item">Spring Boot</li>
+          </ul>
         </div>
-
-        <div class="skill-col clip-reveal">
-          <h3 class="skill-col-title">
-            <span class="skill-col-icon">🗄</span>
-            BDD &amp; Outils
-          </h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">MySQL</span><span class="sk-pct">85%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Bootstrap</span><span class="sk-pct">75%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Git / GitHub</span><span class="sk-pct">85%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Zabbix</span><span class="sk-pct">75%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="sk-row"><span class="sk-name">Vite / Tailwind</span><span class="sk-pct">80%</span></div>
-              <div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div>
-            </div>
-          </div>
+        <div class="skill-col">
+          <h3 class="skill-col-title"><span>🛠</span> DevOps &amp; Outils</h3>
+          <ul class="skill-list">
+            <li class="skill-item">MySQL</li>
+            <li class="skill-item">Git / GitHub</li>
+            <li class="skill-item">Ansible</li>
+            <li class="skill-item">Docker</li>
+            <li class="skill-item">Zabbix</li>
+            <li class="skill-item">Linux / Windows Server</li>
+          </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ PROJECTS ════════════════════ -->
+  <!-- ═══════ PROJECTS ═══════ -->
   <section id="projects">
     <div class="container">
-      <div class="sec-label clip-reveal">// 03 — Projets réalisés</div>
-      <h2 class="sec-h2 clip-reveal">Ce que j'ai<br>construit.</h2>
-
-      <div class="proj-cards" id="projCards">
-        <!-- rendered by JS -->
+      <p class="sec-label">// 03 — Projets</p>
+      <h2 class="sec-title">Ce que j'ai<br><em>construit.</em></h2>
+      <div class="proj-grid" id="projCards">
+        <!-- Rendered by JS -->
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ PARCOURS ════════════════════ -->
+  <!-- ═══════ PARCOURS ═══════ -->
   <section id="parcours">
-    <canvas id="cube3d" aria-hidden="true"></canvas>
     <div class="container">
-      <div class="sec-label clip-reveal">// 04 — Parcours</div>
-      <h2 class="sec-h2 clip-reveal">Mon chemin.</h2>
+      <p class="sec-label">// 04 — Parcours</p>
+      <h2 class="sec-title">Mon <em>chemin.</em></h2>
 
       <div class="tl-grid">
 
-        <!-- 01 — BAC -->
-        <div class="tl-card clip-reveal" data-type="edu">
+        <!-- BAC -->
+        <div class="tl-card fade-in">
           <div class="tl-top">
             <span class="tl-tag edu">Formation</span>
             <span class="tl-period">2021 – 2024 · Le Perreux-sur-Marne</span>
           </div>
-          <div class="tl-num" aria-hidden="true">01</div>
           <h3 class="tl-title">Baccalauréat Général</h3>
           <h4 class="tl-place">Lycée Paul Doumer</h4>
           <ul class="tl-list">
@@ -316,13 +203,12 @@
           </ul>
         </div>
 
-        <!-- 02 — BTS -->
-        <div class="tl-card clip-reveal" data-type="edu">
+        <!-- BTS -->
+        <div class="tl-card fade-in">
           <div class="tl-top">
             <span class="tl-tag edu">Formation</span>
             <span class="tl-period">2024 – 2026 · Villejuif</span>
           </div>
-          <div class="tl-num" aria-hidden="true">02</div>
           <h3 class="tl-title">BTS SIO option SLAM</h3>
           <h4 class="tl-place">EFREI Paris Panthéon-Assas</h4>
           <ul class="tl-list">
@@ -332,13 +218,12 @@
           </ul>
         </div>
 
-        <!-- 03 — STAGE MAIRIE (cliquable) -->
-        <div class="tl-card tl-card-clickable clip-reveal" data-type="xp" data-stage="mairie">
+        <!-- STAGE MAIRIE -->
+        <div class="tl-card fade-in">
           <div class="tl-top">
             <span class="tl-tag xp">Stage · 1ère année</span>
             <span class="tl-period">2024 · 8 semaines · Le Perreux-sur-Marne</span>
           </div>
-          <div class="tl-num" aria-hidden="true">03</div>
           <h3 class="tl-title">Stage DSI — Infrastructure &amp; Sécurité</h3>
           <h4 class="tl-place">Mairie du Perreux-sur-Marne</h4>
           <ul class="tl-list">
@@ -346,50 +231,38 @@
             <li>Monitoring Zabbix &amp; résolution incidents</li>
             <li>Sécurité réseau (VLANs, Guacamole)</li>
           </ul>
-          <div class="tl-click-hint">Cliquer pour voir le détail du stage →</div>
-
-          <!-- Panneau détail stage Mairie -->
-          <div class="tl-detail" id="detail-mairie">
-            <div class="tl-detail-inner">
-              <h4 class="tl-detail-title">Détail du stage — Mairie du Perreux-sur-Marne</h4>
-              <div class="tl-detail-grid">
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Observabilité</span>
-                  <p>Installation et configuration complète de <strong>Zabbix</strong> pour le monitoring de l'infrastructure. Supervision des serveurs, switches et services critiques. Gestion des alertes et résolution d'incidents (ex : disque serveur à 92%).</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Accès distant</span>
-                  <p>Déploiement d'<strong>Apache Guacamole</strong> pour sécuriser les accès à distance des agents en télétravail. Configuration des connexions RDP/SSH via une interface web.</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Réseau</span>
-                  <p>Segmentation du réseau via <strong>VLANs</strong> pour isoler les flux sensibles (administration, public, serveurs) et renforcer la sécurité globale.</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Support &amp; Helpdesk</span>
-                  <p>Support de niveau 2 sur un parc de <strong>300 postes</strong>. Gestion des tickets via <strong>GLPI</strong> : incidents matériels, logiciels, réseau et droits d'accès. Rédaction de procédures et charte informatique.</p>
-                </div>
+          <details class="stage-details">
+            <summary>Voir le détail du stage →</summary>
+            <div class="stage-detail-grid">
+              <div class="stage-block">
+                <span class="stage-block-label">Observabilité</span>
+                <p>Installation et configuration de <strong>Zabbix</strong> pour le monitoring. Supervision des serveurs, switches et services critiques.</p>
               </div>
-              <div class="tl-detail-techs">
-                <span class="tl-detail-tech">Zabbix</span>
-                <span class="tl-detail-tech">GLPI</span>
-                <span class="tl-detail-tech">Apache Guacamole</span>
-                <span class="tl-detail-tech">Active Directory</span>
-                <span class="tl-detail-tech">VLANs</span>
-                <span class="tl-detail-tech">Windows Server</span>
-                <span class="tl-detail-tech">Linux</span>
+              <div class="stage-block">
+                <span class="stage-block-label">Accès distant</span>
+                <p>Déploiement d'<strong>Apache Guacamole</strong> pour les accès à distance sécurisés. Configuration RDP/SSH via interface web.</p>
+              </div>
+              <div class="stage-block">
+                <span class="stage-block-label">Réseau</span>
+                <p>Segmentation via <strong>VLANs</strong> pour isoler les flux sensibles et renforcer la sécurité.</p>
+              </div>
+              <div class="stage-block">
+                <span class="stage-block-label">Support</span>
+                <p>Support N2 sur <strong>300 postes</strong>. Gestion des tickets via <strong>GLPI</strong>. Rédaction de procédures et charte informatique.</p>
               </div>
             </div>
-          </div>
+            <div class="stage-techs">
+              <span>Zabbix</span><span>GLPI</span><span>Guacamole</span><span>Active Directory</span><span>VLANs</span><span>Windows Server</span><span>Linux</span>
+            </div>
+          </details>
         </div>
 
-        <!-- 04 — STAGE EXTIA (cliquable) -->
-        <div class="tl-card tl-card-clickable clip-reveal" data-type="xp" data-stage="extia">
+        <!-- STAGE EXTIA -->
+        <div class="tl-card fade-in">
           <div class="tl-top">
             <span class="tl-tag xp">Stage · 2ème année</span>
             <span class="tl-period">2025 · 5 semaines · Sèvres</span>
           </div>
-          <div class="tl-num" aria-hidden="true">04</div>
           <h3 class="tl-title">Stage DSI — Support &amp; DevOps</h3>
           <h4 class="tl-place">EXTIA (ESN)</h4>
           <ul class="tl-list">
@@ -397,70 +270,372 @@
             <li>Interface React.js pour le support IT</li>
             <li>Déploiement Intune &amp; Autopilot</li>
           </ul>
-          <div class="tl-click-hint">Cliquer pour voir le détail du stage →</div>
-
-          <!-- Panneau détail stage EXTIA -->
-          <div class="tl-detail" id="detail-extia">
-            <div class="tl-detail-inner">
-              <h4 class="tl-detail-title">Détail du stage — EXTIA (ESN)</h4>
-              <div class="tl-detail-grid">
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Industrialisation</span>
-                  <p>Conception de <strong>playbooks Ansible</strong> pour automatiser le provisionnement et la maintenance des bases de données. Mise en place de scripts reproductibles.</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Frontend</span>
-                  <p>Développement d'une <strong>interface de gestion interne en React.js</strong> pour le support IT. Dashboard de suivi des tickets et des équipements.</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Modern Workplace</span>
-                  <p>Orchestration du déploiement de postes via <strong>Microsoft Intune</strong> et <strong>Autopilot</strong> (Zero-Touch). Configuration des politiques de sécurité et conformité.</p>
-                </div>
-                <div class="tl-detail-block">
-                  <span class="tl-detail-label">Observabilité</span>
-                  <p>Monitoring d'infrastructure hybride et gestion d'incidents critiques via <strong>Zabbix</strong>. Mise en place d'alertes et tableaux de bord.</p>
-                </div>
+          <details class="stage-details">
+            <summary>Voir le détail du stage →</summary>
+            <div class="stage-detail-grid">
+              <div class="stage-block">
+                <span class="stage-block-label">Industrialisation</span>
+                <p>Conception de <strong>playbooks Ansible</strong> pour automatiser le provisionnement et la maintenance des bases de données.</p>
               </div>
-              <div class="tl-detail-techs">
-                <span class="tl-detail-tech">Ansible</span>
-                <span class="tl-detail-tech">React.js</span>
-                <span class="tl-detail-tech">Intune</span>
-                <span class="tl-detail-tech">Autopilot</span>
-                <span class="tl-detail-tech">Zabbix</span>
-                <span class="tl-detail-tech">Azure AD</span>
-                <span class="tl-detail-tech">PowerShell</span>
+              <div class="stage-block">
+                <span class="stage-block-label">Frontend</span>
+                <p>Développement d'une <strong>interface React.js</strong> pour le support IT. Dashboard de suivi des tickets et équipements.</p>
+              </div>
+              <div class="stage-block">
+                <span class="stage-block-label">Modern Workplace</span>
+                <p>Déploiement de postes via <strong>Microsoft Intune</strong> et <strong>Autopilot</strong> (Zero-Touch). Politiques de sécurité et conformité.</p>
+              </div>
+              <div class="stage-block">
+                <span class="stage-block-label">Observabilité</span>
+                <p>Monitoring d'infrastructure hybride via <strong>Zabbix</strong>. Mise en place d'alertes et tableaux de bord.</p>
               </div>
             </div>
-          </div>
+            <div class="stage-techs">
+              <span>Ansible</span><span>React.js</span><span>Intune</span><span>Autopilot</span><span>Zabbix</span><span>Azure AD</span><span>PowerShell</span>
+            </div>
+          </details>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ CONTACT ════════════════════ -->
+  <!-- ═══════ BTS ═══════ -->
+  <section id="bts">
+    <div class="container">
+      <p class="sec-label">// 05 — Épreuves BTS SIO</p>
+      <h2 class="sec-title">Épreuves<br><em>E5, E6.</em></h2>
+
+      <!-- Contexte stages -->
+      <h3 class="sub-title">Contexte des organisations</h3>
+      <div class="sit-grid" style="margin-bottom:56px">
+        <div class="sit-card">
+          <div class="sit-header">
+            <span class="sit-num">S1</span>
+            <span class="sit-tag">Stage 1ère année · 2024 · 8 sem.</span>
+          </div>
+          <h4 class="sit-name">Mairie du Perreux-sur-Marne</h4>
+          <p class="sit-desc"><strong>Collectivité territoriale</strong> — 34 000 habitants (94). DSI de 2 personnes, parc de <strong>300 postes</strong>. Mon rôle : support N2, Zabbix, Guacamole, GLPI.</p>
+          <div class="sit-skills"><span>Zabbix</span><span>GLPI</span><span>Active Directory</span><span>VLANs</span><span>Guacamole</span></div>
+        </div>
+        <div class="sit-card">
+          <div class="sit-header">
+            <span class="sit-num">S2</span>
+            <span class="sit-tag">Stage 2ème année · 2025 · 5 sem.</span>
+          </div>
+          <h4 class="sit-name">EXTIA — ESN (Sèvres)</h4>
+          <p class="sit-desc"><strong>ESN</strong> — ~3 000 collaborateurs. Équipe Support &amp; DevOps (5 personnes). Mon rôle : Ansible, React.js, Intune/Autopilot, Zabbix.</p>
+          <div class="sit-skills"><span>Ansible</span><span>React.js</span><span>Intune</span><span>Autopilot</span><span>Zabbix</span><span>Azure AD</span></div>
+        </div>
+      </div>
+
+      <!-- E5 -->
+      <div class="exam-intro fade-in" style="border-left-color:var(--acc2)">
+        <div style="text-align:center;flex-shrink:0">
+          <span class="badge-code" style="color:var(--acc2)">E5</span><br>
+          <span class="badge-coef">Coef. 4</span>
+        </div>
+        <div>
+          <p class="exam-desc">
+            <strong>Oral de 40 minutes</strong> (10 min présentation + 30 min entretien).
+            Présentation d'un portfolio couvrant les compétences du
+            <strong>Bloc 2 — Production et fourniture de services informatiques</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="e5-blocs" style="margin-bottom:32px">
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.1</div>
+          <div class="e5-bloc-content">
+            <h4>Gérer le patrimoine informatique</h4>
+            <p>Recenser les ressources, normes, habilitations, continuité de service, sauvegardes. <strong>6 compétences (C1→C6)</strong></p>
+          </div>
+        </div>
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.2</div>
+          <div class="e5-bloc-content">
+            <h4>Répondre aux incidents et aux demandes</h4>
+            <p>Collecter et traiter les demandes réseau, système et applicatif. <strong>3 compétences (C7→C9)</strong></p>
+          </div>
+        </div>
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.3</div>
+          <div class="e5-bloc-content">
+            <h4>Développer la présence en ligne</h4>
+            <p>Valoriser l'image, référencer les services, faire évoluer un site web. <strong>3 compétences (C10→C12)</strong></p>
+          </div>
+        </div>
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.4</div>
+          <div class="e5-bloc-content">
+            <h4>Travailler en mode projet</h4>
+            <p>Analyser les objectifs, planifier, évaluer les indicateurs de suivi. <strong>3 compétences (C13→C15)</strong></p>
+          </div>
+        </div>
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.5</div>
+          <div class="e5-bloc-content">
+            <h4>Mettre à disposition un service</h4>
+            <p>Tests d'intégration, déploiement, accompagnement des utilisateurs. <strong>3 compétences (C16→C18)</strong></p>
+          </div>
+        </div>
+        <div class="e5-bloc">
+          <div class="e5-bloc-num">B2.6</div>
+          <div class="e5-bloc-content">
+            <h4>Organiser son développement professionnel</h4>
+            <p>Environnement d'apprentissage, veille technologique, identité pro, projet pro. <strong>4 compétences (C19→C22)</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:56px">
+        <a href="epreuve-e5.html" class="btn btn-primary" style="display:inline-flex">
+          Voir les 22 compétences C1→C22
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Tableau de synthèse -->
+      <h3 class="sub-title">Tableau de synthèse E5</h3>
+      <div class="table-wrap">
+        <table class="synth-table">
+          <thead>
+            <tr><th>Compétence</th><th>Activité</th><th>Réalisation</th><th>Contexte</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>B2.1 — Patrimoine</td><td>Recenser les ressources (C1)</td><td>Inventaire parc GLPI</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.1 — Patrimoine</td><td>Exploiter référentiels (C2)</td><td>Procédure incidents ITIL</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.1 — Patrimoine</td><td>Vérifier habilitations (C3)</td><td>Profils GLPI + AD</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.1 — Patrimoine</td><td>Continuité de service (C4)</td><td>PRA / PCA</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.1 — Patrimoine</td><td>Gérer sauvegardes (C5)</td><td>Sauvegarde BDD GLPI</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.1 — Patrimoine</td><td>Règles d'utilisation (C6)</td><td>Charte informatique</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.2 — Incidents</td><td>Collecter demandes (C7)</td><td>Ticketing GLPI</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.2 — Incidents</td><td>Traiter réseau/système (C8)</td><td>Incident switch HP + Zabbix</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.2 — Incidents</td><td>Traiter applicatif (C9)</td><td>Incident logiciel comptable</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.3 — En ligne</td><td>Valoriser l'image (C10)</td><td>Profil LinkedIn</td><td>Projet personnel</td></tr>
+            <tr><td>B2.3 — En ligne</td><td>Référencer services (C11)</td><td>SEO du portfolio</td><td>Projet personnel</td></tr>
+            <tr><td>B2.3 — En ligne</td><td>Évolution site Web (C12)</td><td>Portfolio BTS SIO</td><td>Projet personnel</td></tr>
+            <tr><td>B2.4 — Projet</td><td>Analyser objectifs (C13)</td><td>Cahier des charges Auto-École</td><td>Projet scolaire · 2024</td></tr>
+            <tr><td>B2.4 — Projet</td><td>Planifier activités (C14)</td><td>Hackathon Manga Dash</td><td>Hackathon · 2024</td></tr>
+            <tr><td>B2.4 — Projet</td><td>Évaluer indicateurs (C15)</td><td>Suivi KPI Hackathon</td><td>Hackathon · 2024</td></tr>
+            <tr><td>B2.5 — Service</td><td>Tests d'intégration (C16)</td><td>Tests CRUD projets Java</td><td>Projets scolaires · 2024</td></tr>
+            <tr><td>B2.5 — Service</td><td>Déployer service (C17)</td><td>GLPI + Portfolio Vercel</td><td>Stage + Projet</td></tr>
+            <tr><td>B2.5 — Service</td><td>Accompagner utilisateurs (C18)</td><td>Guide utilisateur GLPI</td><td>Stage Mairie · 2024</td></tr>
+            <tr><td>B2.6 — Pro</td><td>Environnement (C19)</td><td>IntelliJ, GitHub, MAMP</td><td>Continu · 2024-2026</td></tr>
+            <tr><td>B2.6 — Pro</td><td>Veille (C20)</td><td>YouTube, Twitter/X, promo</td><td>Continu · 2024-2026</td></tr>
+            <tr><td>B2.6 — Pro</td><td>Identité pro (C21)</td><td>LinkedIn + Portfolio + GitHub</td><td>Continu · 2024-2026</td></tr>
+            <tr><td>B2.6 — Pro</td><td>Projet pro (C22)</td><td>Alternance, Bachelor DevOps</td><td>2024-2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- E6 -->
+      <div class="exam-intro fade-in" style="border-left-color:#E8A838;margin-top:56px">
+        <div style="text-align:center;flex-shrink:0">
+          <span class="badge-code" style="color:#E8A838">E6</span><br>
+          <span class="badge-coef">Coef. 4</span>
+        </div>
+        <div>
+          <p class="exam-desc">
+            <strong>Parcours de compétences — Cybersécurité</strong>.
+            Deux parties : <strong>client léger</strong> (web) et <strong>client lourd</strong> (desktop).
+            Projet : <strong>Muni-Prospection LAcarel</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="sit-grid" style="margin-bottom:32px">
+        <div class="sit-card orange">
+          <div class="sit-header"><span class="sit-num">CL</span><span class="sit-tag">Client Léger · Web</span></div>
+          <h4 class="sit-name">Muni-Prospection — PHP</h4>
+          <p class="sit-desc"><strong>PHP 8.3</strong> + <strong>Bootstrap 5.3</strong>. PDO Singleton, sessions, <strong>verrouillage pessimiste SQL</strong>. Dashboard KPI, filtres, pagination.</p>
+          <div class="sit-skills"><span>PHP 8.3</span><span>MySQL / PDO</span><span>Bootstrap</span><span>JavaScript</span><span>Sessions</span></div>
+        </div>
+        <div class="sit-card orange">
+          <div class="sit-header"><span class="sit-num">CD</span><span class="sit-tag">Client Lourd · Desktop</span></div>
+          <h4 class="sit-name">Muni-Prospection — Python</h4>
+          <p class="sit-desc"><strong>Python 3.13</strong> + <strong>CustomTkinter 5.2</strong>. Architecture <strong>MVC</strong>. 3 onglets : Dashboard, Validation, Export CSV.</p>
+          <div class="sit-skills"><span>Python 3.13</span><span>CustomTkinter</span><span>MySQL Connector</span><span>MVC</span></div>
+        </div>
+      </div>
+
+      <!-- Tableau comparatif -->
+      <div class="table-wrap">
+        <table class="synth-table">
+          <thead>
+            <tr><th>Critère</th><th>Client Léger (Web)</th><th>Client Lourd (Desktop)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Accès</td><td>Navigateur (Apache / MAMP)</td><td>Application installée (Python)</td></tr>
+            <tr><td>Traitement</td><td>Côté serveur (PHP)</td><td>Côté client (Python)</td></tr>
+            <tr><td>Technologies</td><td>PHP 8.3, Bootstrap, MySQL/PDO</td><td>Python 3.13, CustomTkinter, MySQL Connector</td></tr>
+            <tr><td>Architecture</td><td>Pages PHP (config, login, index…)</td><td>MVC dans main.py</td></tr>
+            <tr><td>Fonctionnalité clé</td><td>Verrouillage pessimiste SQL</td><td>Cache mémoire + export CSV</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ VEILLE ═══════ -->
+  <section id="veille">
+    <div class="container">
+      <p class="sec-label">// 06 — Veille technologique</p>
+      <h2 class="sec-title">Rester à la<br>pointe de la <em>tech.</em></h2>
+
+      <div class="veille-grid">
+        <div class="veille-method fade-in">
+          <h4>💬 Échanges</h4>
+          <ul>
+            <li>Discussions avec les camarades de promo</li>
+            <li>Partage de liens et découvertes entre potes</li>
+            <li>Retours d'expérience sur les projets</li>
+          </ul>
+        </div>
+        <div class="veille-method fade-in">
+          <h4>📺 Vidéos &amp; réseaux</h4>
+          <ul>
+            <li>YouTube (chaînes tech, tutos DevOps)</li>
+            <li>Twitter / X (développeurs, actus)</li>
+            <li>GitHub Trending (projets populaires)</li>
+          </ul>
+        </div>
+        <div class="veille-method fade-in">
+          <h4>⏱ Fréquence</h4>
+          <ul>
+            <li>Tous les jours : discussions, Twitter</li>
+            <li>Chaque semaine : vidéos YouTube</li>
+            <li>Quand un truc sort : on teste entre potes</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Sujets de veille</h3>
+      <div class="veille-sujets">
+        <div class="veille-sujet fade-in">
+          <div class="vs-header"><span class="vs-tag">IA &amp; Outils</span><span class="vs-year">2025 — 2026</span></div>
+          <h4>OpenClaw : l'assistant IA open-source</h4>
+          <p><strong>OpenClaw</strong> est un assistant IA gratuit et open-source (fin 2025). Il automatise des tâches via Discord ou WhatsApp. <strong>350 000 stars GitHub</strong> en quelques mois. Un pote m'en a parlé et on a testé ensemble.</p>
+          <div class="vs-sources"><span>GitHub</span><span>YouTube</span><span>Twitter/X</span><span>Promo</span></div>
+        </div>
+        <div class="veille-sujet fade-in">
+          <div class="vs-header"><span class="vs-tag">DevOps</span><span class="vs-year">2024 — 2026</span></div>
+          <h4>Docker : la conteneurisation</h4>
+          <p><strong>Docker</strong> permet de lancer des applis dans des conteneurs isolés. Plus besoin d'installer plein de trucs sur sa machine — on lance une image et ça marche partout.</p>
+          <div class="vs-sources"><span>YouTube</span><span>Docker Hub</span><span>Promo</span></div>
+        </div>
+        <div class="veille-sujet fade-in">
+          <div class="vs-header"><span class="vs-tag">CSS</span><span class="vs-year">2024 — 2026</span></div>
+          <h4>Tailwind CSS vs Bootstrap</h4>
+          <p><strong>Tailwind CSS</strong> utilise des classes utilitaires directement dans le HTML. <strong>Bootstrap</strong> propose des composants prêts à l'emploi. On a comparé les deux en projet.</p>
+          <div class="vs-sources"><span>YouTube</span><span>Twitter/X</span><span>Promo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CV ═══════ -->
+  <section id="cv">
+    <div class="container">
+      <p class="sec-label">// 07 — Curriculum Vitae</p>
+      <h2 class="sec-title">Mon <em>CV.</em></h2>
+
+      <div class="cv-card fade-in">
+        <div class="cv-header">
+          <div>
+            <h3 class="cv-name">Paul Cohen</h3>
+            <p class="cv-subtitle">BTS SIO SLAM · EFREI Paris · Alternance sept. 2026</p>
+          </div>
+          <div class="cv-status"><span class="dot-live"></span> Recherche alternance</div>
+        </div>
+
+        <div class="cv-info-grid">
+          <div><span class="cv-info-label">Âge</span><p class="cv-info-value">20 ans</p></div>
+          <div><span class="cv-info-label">Localisation</span><p class="cv-info-value">Le Perreux-sur-Marne (94)</p></div>
+          <div><span class="cv-info-label">Formation</span><p class="cv-info-value">BTS SIO SLAM · EFREI Paris</p></div>
+          <div><span class="cv-info-label">Langues</span><p class="cv-info-value">Français (natif) · Anglais (B2)</p></div>
+        </div>
+
+        <div>
+          <h4 class="cv-section-title">Expertise technique</h4>
+          <div class="cv-tags">
+            <span class="cv-tag dev">HTML / CSS</span>
+            <span class="cv-tag dev">JavaScript</span>
+            <span class="cv-tag dev">React.js</span>
+            <span class="cv-tag dev">Java</span>
+            <span class="cv-tag data">MySQL</span>
+            <span class="cv-tag dev">C</span>
+            <span class="cv-tag cloud">Git / GitHub</span>
+            <span class="cv-tag cloud">Docker</span>
+            <span class="cv-tag cloud">Ansible</span>
+            <span class="cv-tag sys">Linux</span>
+            <span class="cv-tag sys">Windows Server</span>
+            <span class="cv-tag sys">Zabbix</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="cv-section-title">Expériences</h4>
+          <div class="cv-xp-row">
+            <span class="cv-xp-company">EXTIA</span>
+            <span class="cv-xp-role">Stage DSI — Support &amp; DevOps</span>
+            <span class="cv-xp-date">2025</span>
+          </div>
+          <div class="cv-xp-row">
+            <span class="cv-xp-company">Mairie du Perreux</span>
+            <span class="cv-xp-role">Stage DSI — Infra &amp; Sécurité</span>
+            <span class="cv-xp-date">2024</span>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <a href="assets/CV_Paul_Cohen.pdf" download class="btn btn-primary cv-download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Télécharger mon CV (PDF)
+          </a>
+          <div class="cv-links">
+            <a href="mailto:paulc94.alternance@outlook.fr" class="cv-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/paul-cohen94/" target="_blank" class="cv-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/PaulC94" target="_blank" class="cv-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
   <section id="contact">
     <div class="container">
-      <div class="contact-wrap clip-reveal">
-        <p class="contact-big">On travaille<br>ensemble ?</p>
-        <p class="contact-sub">
-          Disponible en <strong>alternance</strong> dès septembre 2026.<br>
-          N'hésitez pas à me contacter.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:paulc94.alternance@outlook.fr" class="c-link">
-            <span class="c-link-label">Email</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/paul-cohen94/" class="c-link" target="_blank" rel="noopener">
-            <span class="c-link-label">LinkedIn</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://github.com/PaulC94" class="c-link" target="_blank" rel="noopener">
-            <span class="c-link-label">GitHub</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <p class="contact-title">On travaille<br>ensemble ?</p>
+      <p class="contact-sub">Disponible en <strong>alternance</strong> dès septembre 2026. N'hésitez pas à me contacter.</p>
+      <div class="contact-links">
+        <a href="mailto:paulc94.alternance@outlook.fr" class="c-link">
+          <span class="c-link-label">Email</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/paul-cohen94/" class="c-link" target="_blank" rel="noopener">
+          <span class="c-link-label">LinkedIn</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://github.com/PaulC94" class="c-link" target="_blank" rel="noopener">
+          <span class="c-link-label">GitHub</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -469,7 +644,7 @@
   <footer>
     <div class="container footer-inner">
       <span class="footer-copy">© 2026 Paul Cohen — BTS SIO SLAM · EFREI Paris</span>
-      <span class="footer-code">while(alive) { learn(); build(); }</span>
+      <span class="footer-code">while(alive) { learn(); build(); deploy(); }</span>
     </div>
   </footer>
 
