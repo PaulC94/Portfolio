@@ -20,12 +20,12 @@ const COMPETENCES = {
     code: 'C2', bloc: 'Gérer le patrimoine informatique',
     title: 'Exploitation des référentiels, normes et standards',
     desc: `Exploiter des référentiels, normes et standards adoptés par l'organisation pour la gestion du patrimoine informatique.`,
-    how: `<p>J'ai rédigé une <strong>procédure formelle de gestion des incidents</strong> en m'appuyant sur le référentiel <strong>ITIL v4</strong> et la norme <strong>ISO 9001</strong>.</p>
-          <ul><li>Étude du cadre ITIL v4 pour la gestion des services IT</li><li>Application des principes qualité ISO 9001</li><li>Rédaction de la procédure complète : détection, enregistrement, diagnostic, résolution, clôture</li><li>Document structuré et exploitable par l'équipe technique</li></ul>
-          <p class="modal-bilan"><strong>Bilan :</strong> J'ai dû apprendre ITIL sur le tas — je ne connaissais pas le référentiel avant le stage. Ça m'a pris du temps de comprendre la logique mais au final ça m'a aidé à structurer ma façon de gérer les incidents.</p>`,
-    projects: [{ num: 'DOC1', name: 'Procédure de gestion des incidents', ctx: 'Stage Mairie · 2025' }],
-    techs: ['ITIL v4', 'ISO 9001', 'Procédures'],
-    screenshots: [{ src: 'assets/screenshots/doc-procedure-incidents.png', caption: 'Procédure de gestion des incidents — Référentiel ITIL / ISO 9001' }]
+    how: `<p>Pour installer et configurer <strong>GLPI</strong> sur le serveur de la Mairie, j'ai suivi la <strong>documentation officielle</strong> du projet.</p>
+          <ul><li>Consultation de la documentation officielle GLPI pour l'installation (prérequis, configuration Apache + MySQL)</li><li>Suivi des étapes pas à pas : téléchargement, décompression, configuration base de données</li><li>Utilisation de la doc pour le paramétrage des catégories de tickets et des profils</li><li>Référence régulière à la doc pour résoudre les problèmes rencontrés</li></ul>
+          <p class="modal-bilan"><strong>Bilan :</strong> C'est la première fois que je suivais une documentation technique aussi complète. Ça m'a appris à chercher dans la doc avant de demander de l'aide.</p>`,
+    projects: [{ num: 'SP1', name: 'Installation GLPI via doc officielle', ctx: 'Stage Mairie · 2025' }],
+    techs: ['GLPI', 'Documentation', 'Apache', 'MySQL'],
+    screenshots: [{ src: 'assets/screenshots/glpi-parc.png', caption: 'GLPI — Installé en suivant la documentation officielle' }]
   },
   c3: {
     code: 'C3', bloc: 'Gérer le patrimoine informatique',
@@ -42,12 +42,12 @@ const COMPETENCES = {
     code: 'C4', bloc: 'Gérer le patrimoine informatique',
     title: "Vérification des conditions de la continuité d'un service",
     desc: `Vérifier les conditions de la continuité d'un service informatique et anticiper les risques de rupture.`,
-    how: `<p>J'ai rédigé un <strong>PRA (Plan de Reprise d'Activité)</strong> et un <strong>PCA (Plan de Continuité d'Activité)</strong> pour la Mairie.</p>
-          <ul><li>Définition des mesures de continuité : serveur de sauvegarde, onduleur (UPS), redondance réseau</li><li>Accès distant sécurisé via Apache Guacamole</li><li>Étapes de reprise : évaluation des dommages, activation du plan, restauration, tests, retour à la normale</li><li>Définition du RTO et RPO pour chaque service critique</li></ul>
-          <p class="modal-bilan"><strong>Bilan :</strong> J'ai dû partir de zéro — la Mairie n'avait aucun PRA/PCA existant. Le plus dur a été de définir les RTO/RPO réalistes pour chaque service sans avoir de référence.</p>`,
-    projects: [{ num: 'DOC2', name: 'PRA / PCA', ctx: 'Stage Mairie · 2025' }],
-    techs: ['PRA', 'PCA', 'RTO/RPO', 'Sauvegardes'],
-    screenshots: [{ src: 'assets/screenshots/doc-pra-pca.png', caption: "Plan de Reprise et Continuité d'Activité (PRA/PCA)" }]
+    how: `<p>J'ai vérifié que les <strong>sauvegardes GLPI fonctionnaient correctement</strong> et que les services critiques de la Mairie pouvaient redémarrer après une coupure.</p>
+          <ul><li>Vérification régulière des sauvegardes MySQL (intégrité des fichiers .sql)</li><li>Test de restauration de la base GLPI sur un environnement de test</li><li>Vérification du bon fonctionnement des onduleurs (UPS) sur les serveurs</li><li>Contrôle que les services (GLPI, Active Directory) redémarraient correctement après coupure</li></ul>
+          <p class="modal-bilan"><strong>Bilan :</strong> Vérifier que les sauvegardes marchent vraiment, c'est pas juste regarder si le fichier existe — il faut tester la restauration. J'ai appris qu'une sauvegarde non testée ne vaut rien.</p>`,
+    projects: [{ num: 'SP3', name: 'Vérification sauvegardes et continuité', ctx: 'Stage Mairie · 2025' }],
+    techs: ['MySQL', 'Sauvegardes', 'GLPI', 'UPS'],
+    screenshots: [{ src: 'assets/screenshots/phpmyadmin-glpi.png', caption: 'Vérification intégrité des sauvegardes GLPI' }]
   },
   c5: {
     code: 'C5', bloc: 'Gérer le patrimoine informatique',
@@ -64,12 +64,12 @@ const COMPETENCES = {
     code: 'C6', bloc: 'Gérer le patrimoine informatique',
     title: "Vérification du respect des règles d'utilisation des ressources numériques",
     desc: `Vérifier le respect des règles d'utilisation des ressources numériques et sensibiliser les utilisateurs.`,
-    how: `<p>J'ai rédigé une <strong>charte informatique</strong> complète pour encadrer l'utilisation des ressources numériques de la Mairie.</p>
-          <ul><li>Règles d'utilisation des équipements informatiques</li><li>Politique d'accès à Internet et messagerie</li><li>Sécurité des emails : sensibilisation au phishing</li><li>Politique de mots de passe : 8 caractères minimum, changement tous les 90 jours</li><li>Conformité RGPD et section de signature pour les employés</li></ul>
-          <p class="modal-bilan"><strong>Bilan :</strong> La rédaction n'était pas compliquée en soi, mais je me suis demandé si les employés allaient vraiment la lire et l'appliquer. Ça m'a fait réaliser que la sensibilisation est aussi importante que le document lui-même.</p>`,
-    projects: [{ num: 'DOC3', name: 'Charte informatique', ctx: 'Stage Mairie · 2025' }],
-    techs: ['Charte IT', 'RGPD', 'Sécurité'],
-    screenshots: [{ src: 'assets/screenshots/doc-charte-informatique.png', caption: "Charte informatique — Règles d'utilisation" }]
+    how: `<p>J'ai <strong>sensibilisé les utilisateurs</strong> de la Mairie aux bonnes pratiques informatiques lors de mes interventions sur les postes.</p>
+          <ul><li>Rappel des bonnes pratiques lors des interventions : ne pas brancher de clé USB personnelle, verrouiller sa session</li><li>Explication des risques de phishing aux agents qui me posaient des questions</li><li>Conseils sur les mots de passe : éviter les mots de passe trop simples</li><li>Discussion avec les utilisateurs sur les bons réflexes en cas de mail suspect</li></ul>
+          <p class="modal-bilan"><strong>Bilan :</strong> C'était informel — pas une formation officielle, mais à chaque fois que j'intervenais sur un poste, j'en profitais pour rappeler les bonnes pratiques. Les agents étaient réceptifs.</p>`,
+    projects: [{ num: 'SP7', name: 'Sensibilisation bonnes pratiques', ctx: 'Stage Mairie · 2025' }],
+    techs: ['Sécurité', 'Bonnes pratiques', 'Sensibilisation'],
+    screenshots: []
   },
 
   /* ══ CATÉGORIE 2 — Incidents ══ */
