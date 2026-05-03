@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte Informatique — Mairie du Perreux-sur-Marne</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        .doc-header {
+            border-bottom: 3px solid #1a3c6e;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-header .org {
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .doc-header h1 {
+            font-size: 26px;
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .subtitle {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .doc-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .doc-meta span {
+            display: inline-block;
+        }
+
+        .doc-meta strong {
+            color: #333;
+        }
+
+        /* --- Sections --- */
+        h2 {
+            font-size: 18px;
+            color: #1a3c6e;
+            border-left: 4px solid #1a3c6e;
+            padding-left: 12px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-size: 15px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 22px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Definition boxes --- */
+        .definition-box {
+            background-color: #f4f7fb;
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .definition-box .label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1a3c6e;
+            margin-bottom: 4px;
+        }
+
+        .definition-box p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Signature block --- */
+        .signature-block {
+            margin-top: 40px;
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 24px 28px;
+        }
+
+        .signature-block h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #1a3c6e;
+            font-size: 15px;
+        }
+
+        .signature-fields {
+            display: flex;
+            gap: 40px;
+        }
+
+        .signature-field {
+            flex: 1;
+        }
+
+        .signature-field .field-label {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .signature-field .field-line {
+            border-bottom: 1px solid #999;
+            height: 30px;
+        }
+
+        /* --- Footer --- */
+        .doc-footer {
+            margin-top: 50px;
+            padding-top: 16px;
+            border-top: 2px solid #1a3c6e;
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="doc-header">
+        <div class="org">Mairie du Perreux-sur-Marne — DSI</div>
+        <h1>Charte Informatique</h1>
+        <div class="subtitle">Regles d'utilisation des ressources informatiques et de communication</div>
+        <div class="doc-meta">
+            <span><strong>Redacteur :</strong> Paul Cohen</span>
+            <span><strong>Service :</strong> DSI — Support informatique</span>
+            <span><strong>Version :</strong> 1.0</span>
+            <span><strong>Date :</strong> 30/04/2026</span>
+        </div>
+    </div>
+
+    <!-- 1. Objet de la charte -->
+    <h2>1. Objet de la charte</h2>
+    <p>
+        La presente charte a pour objet de definir les regles d'utilisation des moyens informatiques
+        et de communication mis a disposition par la Mairie du Perreux-sur-Marne. Elle vise a sensibiliser
+        les utilisateurs aux bonnes pratiques en matiere de securite informatique et a garantir un usage
+        responsable des ressources numeriques de la collectivite.
+    </p>
+
+    <!-- 2. Champ d'application -->
+    <h2>2. Champ d'application</h2>
+    <p>
+        Cette charte s'applique a l'ensemble des agents de la Mairie du Perreux-sur-Marne, qu'ils soient
+        titulaires, contractuels, stagiaires ou prestataires exterieurs. Toute personne disposant d'un
+        acces aux ressources informatiques de la collectivite est tenue de respecter les regles enoncees
+        dans le present document.
+    </p>
+
+    <!-- 3. Regles d'utilisation -->
+    <h2>3. Regles d'utilisation</h2>
+
+    <!-- 3.1 Materiel -->
+    <h3>3.1 Utilisation du materiel informatique</h3>
+    <div class="definition-box">
+        <div class="label">Postes de travail, imprimantes et peripheriques</div>
+        <p>Le materiel informatique mis a disposition est destine a un usage exclusivement professionnel. Les utilisateurs doivent :</p>
+    </div>
+    <ul>
+        <li>Utiliser le materiel (postes de travail, imprimantes, peripheriques) uniquement dans le cadre de leurs missions professionnelles.</li>
+        <li>Ne pas installer de logiciels non autorises par la DSI sur les postes de travail.</li>
+        <li>Ne pas modifier la configuration materielle ou logicielle des equipements.</li>
+        <li>Signaler toute panne ou dysfonctionnement au service informatique.</li>
+    </ul>
+
+    <!-- 3.2 Internet -->
+    <h3>3.2 Acces Internet</h3>
+    <div class="definition-box">
+        <div class="label">Navigation et telechargements</div>
+        <p>L'acces a Internet est fourni pour les besoins du service. Les utilisateurs s'engagent a :</p>
+    </div>
+    <ul>
+        <li>Ne pas consulter de sites a caractere illicite, inapproprie ou sans rapport avec l'activite professionnelle.</li>
+        <li>Ne pas effectuer de telechargements non autorises (logiciels, fichiers multimedia, etc.).</li>
+        <li>Ne pas utiliser de services de streaming ou de plateformes de partage a des fins personnelles.</li>
+    </ul>
+
+    <!-- 3.3 Messagerie -->
+    <h3>3.3 Messagerie electronique</h3>
+    <div class="definition-box">
+        <div class="label">Usage de la messagerie professionnelle</div>
+        <p>La messagerie electronique est un outil de travail. Les utilisateurs doivent :</p>
+    </div>
+    <ul>
+        <li>Ne pas ouvrir de pieces jointes suspectes ou provenant d'expediteurs inconnus.</li>
+        <li>Signaler immediatement tout email de phishing ou tentative d'hameconnage au service informatique.</li>
+        <li>Ne pas utiliser la messagerie professionnelle a des fins personnelles de maniere abusive.</li>
+        <li>Ne pas transmettre d'informations confidentielles vers des adresses externes non autorisees.</li>
+    </ul>
+
+    <!-- 3.4 Mots de passe -->
+    <h3>3.4 Gestion des mots de passe</h3>
+    <div class="definition-box">
+        <div class="label">Politique de securite des mots de passe</div>
+        <p>Les mots de passe constituent la premiere barriere de securite. Les regles suivantes sont obligatoires :</p>
+    </div>
+    <ul>
+        <li>Le mot de passe doit comporter au minimum <strong>8 caracteres</strong> (lettres majuscules, minuscules, chiffres et caracteres speciaux).</li>
+        <li>Le mot de passe doit etre change tous les <strong>90 jours</strong>.</li>
+        <li>Ne jamais partager son mot de passe avec un collegue ou un tiers.</li>
+        <li>Ne pas noter son mot de passe sur un support visible (post-it, cahier sur le bureau, etc.).</li>
+        <li>Verrouiller sa session en cas d'absence, meme breve (raccourci : <strong>Windows + L</strong>).</li>
+    </ul>
+
+    <!-- 3.5 Donnees personnelles -->
+    <h3>3.5 Protection des donnees personnelles (RGPD)</h3>
+    <div class="definition-box">
+        <div class="label">Reglement General sur la Protection des Donnees</div>
+        <p>Conformement au RGPD, chaque agent est responsable de la protection des donnees personnelles qu'il manipule :</p>
+    </div>
+    <ul>
+        <li>Ne pas stocker de donnees personnelles sur des supports amovibles (cle USB, disque dur externe) sans autorisation de la DSI.</li>
+        <li>Respecter la confidentialite des donnees auxquelles on a acces dans le cadre de ses fonctions.</li>
+        <li>Ne pas transmettre de donnees personnelles a des tiers non habilites.</li>
+        <li>Signaler toute violation de donnees ou incident de securite au Delegue a la Protection des Donnees (DPO).</li>
+    </ul>
+
+    <!-- 4. Sanctions -->
+    <h2>4. Sanctions en cas de non-respect</h2>
+    <p>
+        Tout manquement aux regles definies dans la presente charte pourra entrainer des sanctions
+        disciplinaires proportionnees a la gravite des faits constates, conformement au reglement interieur
+        de la collectivite. En cas d'infraction aux lois en vigueur (atteinte aux systemes informatiques,
+        diffusion de contenus illicites, violation du RGPD), des poursuites judiciaires pourront etre engagees.
+    </p>
+
+    <!-- 5. Signature -->
+    <h2>5. Engagement de l'utilisateur</h2>
+    <p>
+        Je soussigne(e) reconnais avoir pris connaissance de la presente charte informatique et m'engage
+        a en respecter l'ensemble des dispositions.
+    </p>
+
+    <div class="signature-block">
+        <h3>Signature</h3>
+        <div class="signature-fields">
+            <div class="signature-field">
+                <div class="field-label">Nom et prenom</div>
+                <div class="field-line"></div>
+            </div>
+            <div class="signature-field">
+                <div class="field-label">Date</div>
+                <div class="field-line"></div>
+            </div>
+            <div class="signature-field">
+                <div class="field-label">Signature</div>
+                <div class="field-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+        <span>Mairie du Perreux-sur-Marne — DSI</span>
+        <span>Document interne — Diffusion restreinte</span>
+    </div>
+
+</body>
+</html>

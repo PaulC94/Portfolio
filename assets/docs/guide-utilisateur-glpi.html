@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Utilisateur — GLPI · Créer et suivre un ticket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        .doc-header {
+            border-bottom: 3px solid #1a3c6e;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-header .org {
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .doc-header h1 {
+            font-size: 26px;
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .subtitle {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .doc-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .doc-meta span {
+            display: inline-block;
+        }
+
+        .doc-meta strong {
+            color: #333;
+        }
+
+        /* --- Sections --- */
+        h2 {
+            font-size: 18px;
+            color: #1a3c6e;
+            border-left: 4px solid #1a3c6e;
+            padding-left: 12px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-size: 15px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        ul li, ol li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Definition / info boxes --- */
+        .definition-box {
+            background-color: #f4f7fb;
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .definition-box .label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1a3c6e;
+            margin-bottom: 4px;
+        }
+
+        .definition-box p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Step boxes --- */
+        .step-box {
+            background-color: #f9fbfd;
+            border: 1px solid #d0dae8;
+            border-left: 4px solid #1a3c6e;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .step-box .step-number {
+            display: inline-block;
+            background-color: #1a3c6e;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .step-box .step-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #1a3c6e;
+            display: inline;
+        }
+
+        .step-box p {
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        .step-box ul {
+            margin-top: 8px;
+        }
+
+        /* --- Alert box --- */
+        .alert-box {
+            background-color: #fef4f4;
+            border: 1px solid #e8b4b4;
+            border-left: 4px solid #c0392b;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-top: 20px;
+            margin-bottom: 16px;
+        }
+
+        .alert-box .alert-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #c0392b;
+            margin-bottom: 6px;
+        }
+
+        .alert-box p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Status table --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #1a3c6e;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9fbfd;
+        }
+
+        /* --- Form section --- */
+        .form-section {
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 24px 28px;
+            margin-top: 20px;
+            margin-bottom: 16px;
+        }
+
+        .form-section h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #1a3c6e;
+            font-size: 15px;
+        }
+
+        .form-field {
+            margin-bottom: 14px;
+        }
+
+        .form-field .field-label {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .form-field .field-line {
+            border-bottom: 1px solid #999;
+            height: 28px;
+        }
+
+        .form-field .field-area {
+            border: 1px solid #999;
+            border-radius: 3px;
+            height: 60px;
+        }
+
+        .form-field .field-options {
+            font-size: 13px;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .form-field .field-options span {
+            display: inline-block;
+            border: 1px solid #d0dae8;
+            border-radius: 3px;
+            padding: 3px 12px;
+            margin-right: 8px;
+            background-color: #f9fbfd;
+        }
+
+        /* --- Code / URL display --- */
+        .url-display {
+            display: inline-block;
+            background-color: #f0f0f0;
+            border: 1px solid #d0d0d0;
+            border-radius: 3px;
+            padding: 2px 8px;
+            font-family: "Consolas", "Courier New", monospace;
+            font-size: 13px;
+            color: #333;
+        }
+
+        /* --- Footer --- */
+        .doc-footer {
+            margin-top: 50px;
+            padding-top: 16px;
+            border-top: 2px solid #1a3c6e;
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="doc-header">
+        <div class="org">Mairie du Perreux-sur-Marne — DSI</div>
+        <h1>Guide Utilisateur — GLPI</h1>
+        <div class="subtitle">Creer et suivre un ticket d'assistance informatique</div>
+        <div class="doc-meta">
+            <span><strong>Redacteur :</strong> Paul Cohen</span>
+            <span><strong>Service :</strong> DSI — Support informatique</span>
+            <span><strong>Version :</strong> 1.0</span>
+            <span><strong>Date :</strong> 30/04/2026</span>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <h2>Introduction</h2>
+    <p>
+        GLPI est l'outil de gestion des tickets d'assistance informatique utilise par la Mairie du
+        Perreux-sur-Marne. Ce guide vous explique, etape par etape, comment creer un ticket pour
+        signaler un incident ou formuler une demande, et comment suivre son avancement jusqu'a
+        sa resolution.
+    </p>
+
+    <!-- Etape 1 -->
+    <h2>Etape 1 — Se connecter a GLPI</h2>
+    <div class="step-box">
+        <span class="step-number">1</span>
+        <div class="step-title">Connexion a l'interface</div>
+        <p>Ouvrez votre navigateur et rendez-vous a l'adresse suivante :</p>
+        <p><span class="url-display">http://glpi.mairie-perreux.local</span></p>
+        <ul>
+            <li>Saisissez votre <strong>identifiant</strong> et votre <strong>mot de passe</strong> (fournis par le service informatique).</li>
+            <li>Cliquez sur <strong>« Se connecter »</strong>.</li>
+        </ul>
+    </div>
+    <div class="definition-box">
+        <div class="label">Mot de passe oublie ?</div>
+        <p>Contactez le service informatique pour reinitialiser vos identifiants. Ne tentez pas de creer un nouveau compte.</p>
+    </div>
+
+    <!-- Etape 2 -->
+    <h2>Etape 2 — Creer un nouveau ticket</h2>
+    <div class="step-box">
+        <span class="step-number">2</span>
+        <div class="step-title">Ouverture d'un ticket</div>
+        <p>Une fois connecte, suivez ces etapes :</p>
+        <ol>
+            <li>Dans le menu principal, cliquez sur <strong>« Assistance »</strong> puis sur <strong>« Creer un ticket »</strong>.</li>
+            <li>Remplissez les champs suivants :
+                <ul>
+                    <li><strong>Titre :</strong> description courte et claire du probleme (ex. : « Imprimante RDC ne fonctionne plus »).</li>
+                    <li><strong>Categorie :</strong> selectionnez la categorie correspondante (Reseau, Materiel, Logiciel, Messagerie, Autre...).</li>
+                    <li><strong>Urgence :</strong> selectionnez le niveau d'urgence (Basse, Moyenne, Haute, Tres haute).</li>
+                    <li><strong>Description :</strong> decrivez le probleme de maniere detaillee (quand cela a commence, les messages d'erreur affiches, les actions deja tentees, etc.).</li>
+                </ul>
+            </li>
+            <li>Cliquez sur <strong>« Soumettre »</strong> pour envoyer votre ticket.</li>
+        </ol>
+    </div>
+    <div class="definition-box">
+        <div class="label">Conseil</div>
+        <p>Plus votre description est precise, plus le service informatique pourra traiter votre demande rapidement. N'hesitez pas a joindre une capture d'ecran si necessaire.</p>
+    </div>
+
+    <!-- Etape 3 -->
+    <h2>Etape 3 — Suivre son ticket</h2>
+    <div class="step-box">
+        <span class="step-number">3</span>
+        <div class="step-title">Consultation de l'avancement</div>
+        <p>Pour consulter l'etat de vos tickets :</p>
+        <ol>
+            <li>Dans le menu, cliquez sur <strong>« Assistance »</strong> puis sur <strong>« Tickets »</strong>.</li>
+            <li>La liste de vos tickets s'affiche avec leur statut actuel.</li>
+            <li>Cliquez sur un ticket pour voir les details, les commentaires du technicien et ajouter des informations complementaires si necessaire.</li>
+        </ol>
+    </div>
+
+    <h3>Signification des statuts</h3>
+    <table>
+        <tr>
+            <th>Statut</th>
+            <th>Signification</th>
+        </tr>
+        <tr>
+            <td><strong>Nouveau</strong></td>
+            <td>Le ticket vient d'etre cree et n'a pas encore ete pris en charge par un technicien.</td>
+        </tr>
+        <tr>
+            <td><strong>En cours</strong></td>
+            <td>Un technicien a pris en charge le ticket et travaille a sa resolution.</td>
+        </tr>
+        <tr>
+            <td><strong>Resolu</strong></td>
+            <td>Le probleme a ete resolu. Vous serez invite a valider la resolution ou a rouvrir le ticket.</td>
+        </tr>
+        <tr>
+            <td><strong>Clos</strong></td>
+            <td>Le ticket est definitivement ferme apres validation de la resolution.</td>
+        </tr>
+    </table>
+
+    <!-- Etape 4 — Urgence -->
+    <h2>Etape 4 — Que faire en cas d'urgence ?</h2>
+    <div class="alert-box">
+        <div class="alert-title">Situation urgente</div>
+        <p>
+            En cas de panne critique affectant l'ensemble d'un service (serveur inaccessible, coupure reseau
+            generalisee, incident de securite...), ne vous limitez pas a la creation d'un ticket.
+            <strong>Appelez directement le service informatique au 01 XX XX XX XX</strong> pour un traitement
+            immediat.
+        </p>
+    </div>
+    <p>
+        Le telephone est reserve aux situations urgentes. Pour les demandes courantes (probleme logiciel,
+        demande de materiel, question technique), merci de privilegier la creation d'un ticket via GLPI.
+    </p>
+
+    <!-- Formulaire de demande d'amelioration -->
+    <h2>Formulaire de demande d'amelioration</h2>
+    <p>
+        Vous souhaitez proposer une amelioration des outils ou services informatiques ? Remplissez le
+        formulaire ci-dessous et transmettez-le au service informatique ou deposez-le dans la boite
+        prevue a cet effet.
+    </p>
+
+    <div class="form-section">
+        <h3>Demande d'amelioration — Formulaire</h3>
+
+        <div class="form-field">
+            <div class="field-label">Nom et prenom</div>
+            <div class="field-line"></div>
+        </div>
+
+        <div class="form-field">
+            <div class="field-label">Service</div>
+            <div class="field-line"></div>
+        </div>
+
+        <div class="form-field">
+            <div class="field-label">Description de l'amelioration souhaitee</div>
+            <div class="field-area"></div>
+        </div>
+
+        <div class="form-field">
+            <div class="field-label">Priorite</div>
+            <div class="field-options">
+                <span>Faible</span>
+                <span>Moyenne</span>
+                <span>Haute</span>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <div class="field-label">Date</div>
+            <div class="field-line"></div>
+        </div>
+
+        <div class="form-field">
+            <div class="field-label">Signature</div>
+            <div class="field-line"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+        <span>Mairie du Perreux-sur-Marne — DSI</span>
+        <span>Document interne — Diffusion restreinte</span>
+    </div>
+
+</body>
+</html>

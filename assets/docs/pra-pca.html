@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Reprise d'Activite (PRA) et Plan de Continuite d'Activite (PCA)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        .doc-header {
+            border-bottom: 3px solid #1a3c6e;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-header .org {
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .doc-header h1 {
+            font-size: 26px;
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .subtitle {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .doc-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .doc-meta span {
+            display: inline-block;
+        }
+
+        .doc-meta strong {
+            color: #333;
+        }
+
+        /* --- Sections --- */
+        h2 {
+            font-size: 18px;
+            color: #1a3c6e;
+            border-left: 4px solid #1a3c6e;
+            padding-left: 12px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-size: 15px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul {
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-left: 22px;
+            color: #333;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+        }
+
+        /* --- Definition boxes --- */
+        .definition-box {
+            background-color: #f4f7fb;
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .definition-box .label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1a3c6e;
+            margin-bottom: 4px;
+        }
+
+        .definition-box p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Steps --- */
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 22px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            background-color: #1a3c6e;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content .step-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 13.5px;
+            margin-bottom: 0;
+            color: #444;
+        }
+
+        .step-content ul {
+            margin-top: 6px;
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: #444;
+        }
+
+        .step-content ul li {
+            margin-bottom: 3px;
+        }
+
+        /* --- Table --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 13.5px;
+        }
+
+        table th {
+            background-color: #1a3c6e;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) td {
+            background-color: #f9fafb;
+        }
+
+        /* --- Footer --- */
+        .doc-footer {
+            margin-top: 50px;
+            padding-top: 16px;
+            border-top: 2px solid #1a3c6e;
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="doc-header">
+        <div class="org">Mairie du Perreux-sur-Marne — Direction des Systemes d'Information</div>
+        <h1>Plan de Reprise d'Activite (PRA) et Plan de Continuite d'Activite (PCA)</h1>
+        <div class="subtitle">Strategie de resilience des services informatiques</div>
+        <div class="doc-meta">
+            <span><strong>Redacteur :</strong> Paul Cohen</span>
+            <span><strong>Service :</strong> DSI — Support informatique</span>
+            <span><strong>Version :</strong> 1.0</span>
+            <span><strong>Date :</strong> 30/04/2026</span>
+        </div>
+    </div>
+
+    <!-- 1. Objet du document -->
+    <h2>1. Objet du document</h2>
+    <p>
+        Ce document presente le Plan de Continuite d'Activite (PCA) et le Plan de Reprise d'Activite (PRA)
+        mis en place au sein de la Direction des Systemes d'Information de la Mairie du Perreux-sur-Marne.
+        Il definit les mesures preventives pour assurer la continuite des services en cas de panne, ainsi que
+        les procedures de reprise apres un sinistre majeur.
+    </p>
+
+    <!-- 2. Definitions -->
+    <h2>2. Definitions</h2>
+
+    <div class="definition-box">
+        <div class="label">PCA — Plan de Continuite d'Activite</div>
+        <p>
+            Le PCA regroupe l'ensemble des mesures et des dispositifs mis en place pour assurer le maintien
+            des services informatiques critiques en cas de panne ou de dysfonctionnement. L'objectif est
+            d'eviter toute interruption de service en anticipant les risques et en mettant en oeuvre des
+            solutions de redondance et de secours.
+        </p>
+    </div>
+
+    <div class="definition-box">
+        <div class="label">PRA — Plan de Reprise d'Activite</div>
+        <p>
+            Le PRA definit les procedures a suivre pour retablir les services informatiques apres un sinistre
+            majeur (incendie, inondation, cyberattaque, panne materielle grave). Il vise a restaurer
+            l'ensemble des systemes dans un delai acceptable afin de minimiser l'impact sur l'activite
+            de la collectivite.
+        </p>
+    </div>
+
+    <div class="definition-box">
+        <div class="label">RTO — Recovery Time Objective (Duree maximale d'interruption admissible)</div>
+        <p>
+            Le RTO correspond au delai maximum tolere entre la survenue de l'incident et la remise en
+            service du systeme. Par exemple, un RTO de 4 heures signifie que le service doit etre retabli
+            dans les 4 heures suivant la panne.
+        </p>
+    </div>
+
+    <div class="definition-box">
+        <div class="label">RPO — Recovery Point Objective (Perte de donnees maximale admissible)</div>
+        <p>
+            Le RPO correspond a la quantite maximale de donnees que l'on accepte de perdre en cas de
+            sinistre. Il est directement lie a la frequence des sauvegardes. Par exemple, un RPO de
+            24 heures signifie que l'on peut perdre au maximum une journee de donnees (derniere sauvegarde
+            quotidienne).
+        </p>
+    </div>
+
+    <!-- 3. PCA -->
+    <h2>3. Plan de Continuite d'Activite (PCA)</h2>
+
+    <h3>3.1 Objectif</h3>
+    <p>
+        Assurer la continuite des services informatiques critiques de la Mairie en cas de panne partielle,
+        de defaillance materielle ou de coupure reseau, sans interruption perceptible pour les utilisateurs.
+    </p>
+
+    <h3>3.2 Mesures de continuite mises en place</h3>
+    <ul>
+        <li><strong>Serveur de backup :</strong> un serveur secondaire est configure pour prendre le relais en cas de defaillance du serveur principal, assurant la disponibilite des donnees et des applications.</li>
+        <li><strong>Onduleur (UPS) :</strong> des onduleurs sont installes sur les equipements critiques (serveurs, switch coeur de reseau) afin de maintenir l'alimentation electrique en cas de coupure et permettre un arret propre des systemes.</li>
+        <li><strong>Redondance reseau :</strong> la connexion internet est assuree par deux liaisons distinctes afin de garantir un acces continu en cas de defaillance d'un fournisseur.</li>
+        <li><strong>Acces distant via Apache Guacamole :</strong> la solution Apache Guacamole permet aux agents d'acceder a leur poste de travail a distance via un navigateur web, assurant la continuite du travail en cas d'impossibilite d'acces physique aux locaux.</li>
+    </ul>
+
+    <h3>3.3 Services critiques et mesures associees</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Service critique</th>
+                <th>Mesure de continuite</th>
+                <th>Delai max d'interruption</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Active Directory / DNS</td>
+                <td>Controleur de domaine secondaire</td>
+                <td>< 15 minutes</td>
+            </tr>
+            <tr>
+                <td>Messagerie</td>
+                <td>Serveur de backup + redondance reseau</td>
+                <td>< 1 heure</td>
+            </tr>
+            <tr>
+                <td>Applications metier</td>
+                <td>Sauvegarde quotidienne + serveur secondaire</td>
+                <td>< 2 heures</td>
+            </tr>
+            <tr>
+                <td>Acces internet</td>
+                <td>Double liaison FAI</td>
+                <td>< 5 minutes</td>
+            </tr>
+            <tr>
+                <td>Serveur de fichiers</td>
+                <td>Replication des donnees + sauvegarde journaliere</td>
+                <td>< 1 heure</td>
+            </tr>
+            <tr>
+                <td>Acces distant</td>
+                <td>Apache Guacamole sur serveur dedie</td>
+                <td>< 30 minutes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 4. PRA -->
+    <h2>4. Plan de Reprise d'Activite (PRA)</h2>
+
+    <h3>4.1 Objectif</h3>
+    <p>
+        Retablir l'ensemble des services informatiques apres un sinistre majeur (incendie, inondation,
+        cyberattaque, panne generalisee) dans un delai acceptable, en suivant une procedure structuree
+        garantissant la fiabilite de la reprise.
+    </p>
+
+    <h3>4.2 Etapes de reprise</h3>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <div class="step-title">Evaluation des degats</div>
+            <p>La DSI procede a un diagnostic complet de l'incident :</p>
+            <ul>
+                <li>Identification de la nature du sinistre (materiel, logiciel, environnemental)</li>
+                <li>Evaluation de l'etendue des degats sur l'infrastructure</li>
+                <li>Inventaire des services et des equipements impactes</li>
+                <li>Estimation du delai de reprise</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <div class="step-title">Activation du plan</div>
+            <p>Le responsable DSI declenche officiellement le PRA :</p>
+            <ul>
+                <li>Notification de la direction generale et des chefs de service</li>
+                <li>Mobilisation de l'equipe technique de la DSI</li>
+                <li>Communication aupres des utilisateurs sur l'etat de la situation</li>
+                <li>Mise en place d'un canal de communication d'urgence</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <div class="step-title">Restauration des backups</div>
+            <p>Les donnees et les systemes sont restaures a partir des sauvegardes :</p>
+            <ul>
+                <li>Restauration du systeme Active Directory et du DNS en priorite</li>
+                <li>Restauration du serveur de fichiers depuis la derniere sauvegarde</li>
+                <li>Reinstallation et reconfiguration des services applicatifs</li>
+                <li>Restauration des bases de donnees des applications metier</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <div class="step-title">Tests de bon fonctionnement</div>
+            <p>Avant la remise en production, chaque service restaure est teste :</p>
+            <ul>
+                <li>Verification de l'authentification Active Directory</li>
+                <li>Test d'acces aux fichiers partages et aux applications metier</li>
+                <li>Controle de la connectivite reseau (internet, intranet)</li>
+                <li>Validation de l'acces distant via Apache Guacamole</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+            <div class="step-title">Retour a la normale</div>
+            <p>Une fois les tests valides, le retour en production est confirme :</p>
+            <ul>
+                <li>Communication aux utilisateurs de la reprise des services</li>
+                <li>Surveillance renforcee des systemes pendant 48 heures</li>
+                <li>Redaction d'un rapport d'incident detaillant les causes et les actions menees</li>
+                <li>Mise a jour du PRA si des ameliorations sont identifiees</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. RTO et RPO -->
+    <h2>5. Objectifs de reprise (RTO / RPO)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>RTO (delai max de reprise)</th>
+                <th>RPO (perte de donnees max)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Active Directory / DNS</td>
+                <td>1 heure</td>
+                <td>0 (replication en temps reel)</td>
+            </tr>
+            <tr>
+                <td>Messagerie</td>
+                <td>4 heures</td>
+                <td>24 heures</td>
+            </tr>
+            <tr>
+                <td>Applications metier</td>
+                <td>8 heures</td>
+                <td>24 heures</td>
+            </tr>
+            <tr>
+                <td>Serveur de fichiers</td>
+                <td>4 heures</td>
+                <td>24 heures</td>
+            </tr>
+            <tr>
+                <td>Acces internet</td>
+                <td>1 heure</td>
+                <td>Non applicable</td>
+            </tr>
+            <tr>
+                <td>Acces distant (Guacamole)</td>
+                <td>2 heures</td>
+                <td>Non applicable</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+        <span>Mairie du Perreux-sur-Marne — DSI</span>
+        <span>Document interne — Diffusion restreinte</span>
+    </div>
+
+</body>
+</html>

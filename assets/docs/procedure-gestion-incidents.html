@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedure de Gestion des Incidents — Referentiel ITIL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        .doc-header {
+            border-bottom: 3px solid #1a3c6e;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-header .org {
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        .doc-header h1 {
+            font-size: 26px;
+            color: #1a3c6e;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .subtitle {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .doc-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 14px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .doc-meta span {
+            display: inline-block;
+        }
+
+        .doc-meta strong {
+            color: #333;
+        }
+
+        /* --- Sections --- */
+        h2 {
+            font-size: 18px;
+            color: #1a3c6e;
+            border-left: 4px solid #1a3c6e;
+            padding-left: 12px;
+            margin-top: 36px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-size: 15px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* --- Definition boxes --- */
+        .definition-box {
+            background-color: #f4f7fb;
+            border: 1px solid #d0dae8;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .definition-box .label {
+            font-weight: 700;
+            font-size: 14px;
+            color: #1a3c6e;
+            margin-bottom: 4px;
+        }
+
+        .definition-box p {
+            margin-bottom: 0;
+            font-size: 13.5px;
+        }
+
+        /* --- Steps --- */
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 22px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            background-color: #1a3c6e;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content .step-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 13.5px;
+            margin-bottom: 0;
+            color: #444;
+        }
+
+        .step-content ul {
+            margin-top: 6px;
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: #444;
+        }
+
+        .step-content ul li {
+            margin-bottom: 3px;
+        }
+
+        /* --- Table --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 13.5px;
+        }
+
+        table th {
+            background-color: #1a3c6e;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) td {
+            background-color: #f9fafb;
+        }
+
+        /* --- Footer --- */
+        .doc-footer {
+            margin-top: 50px;
+            padding-top: 16px;
+            border-top: 2px solid #1a3c6e;
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="doc-header">
+        <div class="org">Mairie du Perreux-sur-Marne — Direction des Systemes d'Information</div>
+        <h1>Procedure de Gestion des Incidents</h1>
+        <div class="subtitle">Referentiel ITIL v4 — Processus de gestion des services informatiques</div>
+        <div class="doc-meta">
+            <span><strong>Redacteur :</strong> Paul Cohen</span>
+            <span><strong>Service :</strong> DSI — Support informatique</span>
+            <span><strong>Version :</strong> 1.0</span>
+            <span><strong>Date :</strong> 30/04/2026</span>
+        </div>
+    </div>
+
+    <!-- 1. Objet du document -->
+    <h2>1. Objet du document</h2>
+    <p>
+        Ce document definit la procedure de gestion des incidents informatiques appliquee au sein de la
+        Direction des Systemes d'Information de la Mairie du Perreux-sur-Marne. Elle s'appuie sur les
+        bonnes pratiques du referentiel ITIL et les exigences de la norme ISO 9001 afin de garantir un
+        traitement structure, rapide et documentable de chaque incident.
+    </p>
+
+    <!-- 2. Cadre normatif -->
+    <h2>2. Cadre normatif</h2>
+
+    <div class="definition-box">
+        <div class="label">ITIL (Information Technology Infrastructure Library)</div>
+        <p>
+            ITIL est un ensemble de bonnes pratiques pour la gestion des services informatiques (ITSM).
+            Il fournit un cadre structure permettant d'aligner les services IT sur les besoins de
+            l'organisation, d'ameliorer la qualite des services et de reduire les couts. La gestion des
+            incidents est l'un des processus cles d'ITIL : elle vise a retablir le fonctionnement normal
+            d'un service le plus rapidement possible en minimisant l'impact sur l'activite.
+        </p>
+    </div>
+
+    <div class="definition-box">
+        <div class="label">ISO 9001 — Systeme de management de la qualite</div>
+        <p>
+            La norme ISO 9001 definit les exigences relatives a un systeme de management de la qualite (SMQ).
+            Elle impose une approche par les processus, la tracabilite des actions et l'amelioration continue.
+            Dans le contexte de la gestion des incidents, ISO 9001 exige que chaque incident soit enregistre,
+            traite selon une procedure definie et que les actions correctives soient documentees.
+        </p>
+    </div>
+
+    <!-- 3. Perimetre -->
+    <h2>3. Perimetre</h2>
+    <p>
+        Cette procedure s'applique a l'ensemble des incidents informatiques signales par les agents de la
+        Mairie, qu'ils concernent le materiel (postes de travail, imprimantes, peripheriques), les logiciels
+        (applications metier, messagerie, bureautique) ou le reseau (acces internet, Wi-Fi, VPN).
+    </p>
+
+    <!-- 4. Niveaux de priorite -->
+    <h2>4. Niveaux de priorite</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Priorite</th>
+                <th>Impact</th>
+                <th>Delai de prise en charge</th>
+                <th>Exemple</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>P1 — Critique</strong></td>
+                <td>Service completement indisponible</td>
+                <td>Immediat (< 30 min)</td>
+                <td>Panne serveur, coupure reseau generale</td>
+            </tr>
+            <tr>
+                <td><strong>P2 — Haute</strong></td>
+                <td>Service degrade pour plusieurs utilisateurs</td>
+                <td>< 2 heures</td>
+                <td>Imprimante partagee en panne, lenteurs reseau</td>
+            </tr>
+            <tr>
+                <td><strong>P3 — Moyenne</strong></td>
+                <td>Impact limite a un utilisateur</td>
+                <td>< 8 heures</td>
+                <td>Logiciel bloque, probleme de messagerie individuel</td>
+            </tr>
+            <tr>
+                <td><strong>P4 — Basse</strong></td>
+                <td>Gene mineure, contournement possible</td>
+                <td>< 48 heures</td>
+                <td>Demande de configuration, question d'utilisation</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 5. Procedure -->
+    <h2>5. Procedure de gestion des incidents</h2>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <div class="step-title">Detection de l'incident</div>
+            <p>L'incident est detecte et signale par l'utilisateur via l'un des canaux suivants :</p>
+            <ul>
+                <li>Outil de ticketing <strong>GLPI</strong> (creation directe d'un ticket)</li>
+                <li>Appel telephonique aupres du support DSI</li>
+                <li>E-mail envoye a l'adresse du support informatique</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <div class="step-title">Enregistrement de l'incident</div>
+            <p>Le technicien de support enregistre l'incident dans GLPI en renseignant les informations suivantes :</p>
+            <ul>
+                <li>Description detaillee de l'incident</li>
+                <li>Categorisation (materiel, logiciel, reseau, autre)</li>
+                <li>Attribution d'un niveau de priorite (P1 a P4)</li>
+                <li>Identification de l'utilisateur et du poste concerne</li>
+                <li>Date et heure de la declaration</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <div class="step-title">Diagnostic</div>
+            <p>Le technicien analyse la cause de l'incident :</p>
+            <ul>
+                <li><strong>Niveau 1 (N1)</strong> : diagnostic initial par le technicien de support. Resolution des incidents courants (reinitialisation de mot de passe, redemarrage de service, reconfiguration de poste).</li>
+                <li><strong>Niveau 2 (N2)</strong> : escalade vers un technicien specialise ou l'administrateur systeme si l'incident depasse le perimetre du N1 (panne serveur, probleme Active Directory, incident de securite).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <div class="step-title">Resolution</div>
+            <p>La solution est appliquee et documentee :</p>
+            <ul>
+                <li>Mise en oeuvre de la correction (intervention a distance ou sur site)</li>
+                <li>Documentation de la solution dans le ticket GLPI</li>
+                <li>Mise a jour de la base de connaissances si l'incident est nouveau</li>
+                <li>Verification du bon fonctionnement du service retabli</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+            <div class="step-title">Cloture</div>
+            <p>Le ticket est clos apres validation :</p>
+            <ul>
+                <li>Contact avec l'utilisateur pour confirmer la resolution</li>
+                <li>Obtention de la validation de l'utilisateur</li>
+                <li>Fermeture du ticket dans GLPI avec le statut "Resolu"</li>
+                <li>Enregistrement du temps de traitement total</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 6. Indicateurs -->
+    <h2>6. Indicateurs de suivi</h2>
+    <p>Conformement aux exigences ITIL et ISO 9001, les indicateurs suivants sont suivis mensuellement :</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Indicateur</th>
+                <th>Objectif</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Taux de resolution au premier contact (N1)</td>
+                <td>> 70 %</td>
+            </tr>
+            <tr>
+                <td>Delai moyen de resolution</td>
+                <td>< 4 heures</td>
+            </tr>
+            <tr>
+                <td>Nombre d'incidents par categorie</td>
+                <td>Suivi mensuel pour identification des tendances</td>
+            </tr>
+            <tr>
+                <td>Taux de satisfaction utilisateur</td>
+                <td>> 85 %</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+        <span>Mairie du Perreux-sur-Marne — DSI</span>
+        <span>Document interne — Diffusion restreinte</span>
+    </div>
+
+</body>
+</html>
