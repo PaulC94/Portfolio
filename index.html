@@ -427,8 +427,8 @@
                 <div><strong>Inventaire du parc informatique</strong><br><span style="color:var(--muted)">13 machines recensées dans GLPI (postes, serveurs, portables, réseau)</span></div>
               </div>
               <div class="stage-mission">
-                <div class="stage-mission-comps"><span>C2</span></div>
-                <div><strong>Installation GLPI via doc officielle</strong><br><span style="color:var(--muted)">Configuration Apache + MySQL en suivant la documentation</span></div>
+                <div class="stage-mission-comps"><span>C2</span><span>C17</span></div>
+                <div><strong>Installation GLPI sur serveur Debian</strong><br><span style="color:var(--muted)">Déploiement complet sur Debian : Apache, MySQL, configuration via doc officielle</span></div>
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C3</span></div>
@@ -447,6 +447,10 @@
                 <div><strong>Ticketing GLPI</strong><br><span style="color:var(--muted)">6 catégories paramétrées, ~10 tickets gérés</span></div>
               </div>
               <div class="stage-mission">
+                <div class="stage-mission-comps"><span>C17</span><span>C8</span></div>
+                <div><strong>Installation &amp; configuration Zabbix sur Debian</strong><br><span style="color:var(--muted)">Déploiement du serveur de supervision sur Debian, configuration des hôtes et alertes</span></div>
+              </div>
+              <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C8</span></div>
                 <div><strong>Incident switch HP + alerte Zabbix</strong><br><span style="color:var(--muted)">Crash switch → diagnostic avec tuteur. Disque serveur à 92% → nettoyage 15 Go</span></div>
               </div>
@@ -456,7 +460,11 @@
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C17</span></div>
-                <div><strong>Déploiement Apache Guacamole</strong><br><span style="color:var(--muted)">Accès distant aux postes via navigateur (RDP/VNC/SSH)</span></div>
+                <div><strong>Déploiement Apache Guacamole sur Debian</strong><br><span style="color:var(--muted)">Installation et configuration de l'accès distant aux postes via navigateur (RDP/VNC/SSH)</span></div>
+              </div>
+              <div class="stage-mission">
+                <div class="stage-mission-comps"><span>C7</span><span>C9</span></div>
+                <div><strong>Support utilisateurs</strong><br><span style="color:var(--muted)">Assistance aux agents : dépannage postes, résolution de problèmes logiciels et matériels</span></div>
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C18</span></div>
@@ -464,7 +472,7 @@
               </div>
             </div>
             <div class="stage-techs">
-              <span>GLPI</span><span>Active Directory</span><span>Zabbix</span><span>Guacamole</span><span>MySQL</span><span>Windows Server</span><span>Linux</span>
+              <span>GLPI</span><span>Zabbix</span><span>Guacamole</span><span>Debian</span><span>Active Directory</span><span>MySQL</span><span>Windows Server</span>
             </div>
           </details>
         </div>
@@ -487,11 +495,15 @@
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C17</span><span>C2</span></div>
-                <div><strong>Automatisation avec Ansible</strong><br><span style="color:var(--muted)">Écriture de playbooks pour déploiement et configuration de serveurs</span></div>
+                <div><strong>Script Python + Ansible</strong><br><span style="color:var(--muted)">Écriture de scripts Python pour générer et lancer des playbooks Ansible (déploiement &amp; configuration serveurs)</span></div>
+              </div>
+              <div class="stage-mission">
+                <div class="stage-mission-comps"><span>C7</span><span>C9</span></div>
+                <div><strong>Support utilisateurs via Azure &amp; Intune</strong><br><span style="color:var(--muted)">Gestion des tickets, dépannage à distance, administration des postes via Azure AD et Intune</span></div>
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C1</span><span>C3</span></div>
-                <div><strong>Gestion de parc avec Microsoft Intune</strong><br><span style="color:var(--muted)">Déploiement et gestion des postes à distance, politiques de sécurité</span></div>
+                <div><strong>Création et déploiement de postes</strong><br><span style="color:var(--muted)">Configuration de nouveaux postes collaborateurs, enrôlement Intune, installation logiciels</span></div>
               </div>
               <div class="stage-mission">
                 <div class="stage-mission-comps"><span>C19</span><span>C20</span><span>C22</span></div>
@@ -499,7 +511,7 @@
               </div>
             </div>
             <div class="stage-techs">
-              <span>Zabbix</span><span>Ansible</span><span>Intune</span><span>Docker</span>
+              <span>Zabbix</span><span>Python</span><span>Ansible</span><span>Azure AD</span><span>Intune</span><span>Docker</span>
             </div>
           </details>
         </div>
