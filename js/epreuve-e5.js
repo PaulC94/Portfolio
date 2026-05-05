@@ -9,11 +9,14 @@ const COMPETENCES = {
     code: 'C1', bloc: 'Gérer le patrimoine informatique',
     title: 'Recensement et identification des ressources numériques',
     desc: `Recenser et identifier les ressources numériques de l'organisation à l'aide d'un outil de gestion de parc.`,
-    how: `<p>Lors de mon <strong>stage à la Mairie du Perreux-sur-Marne</strong>, j'ai réalisé le recensement complet du parc informatique avec <strong>GLPI</strong>.</p>
-          <ul><li>Installation et configuration de GLPI sur le serveur</li><li>Inventaire de 13 machines : postes fixes, serveurs, portables</li><li>Référencement des équipements réseau : switches, pare-feu</li><li>Suivi des imprimantes du parc</li><li>Chaque équipement tracé par localisation, numéro de série et fabricant</li></ul>
-          <p class="modal-bilan"><strong>Bilan :</strong> L'inventaire a été long car rien n'était automatisé à la Mairie — tout était fait manuellement poste par poste. Chez EXTIA en revanche, l'inventaire était déjà automatisé, ce qui m'a permis de voir la différence entre un SI mature et un SI à structurer.</p>`,
-    projects: [{ num: 'SP1', name: 'Inventaire parc GLPI', ctx: 'Stage Mairie · 2025' }],
-    techs: ['GLPI', 'Active Directory', 'Windows Server'],
+    how: `<p>Lors de mon <strong>stage à la Mairie du Perreux-sur-Marne</strong>, j'ai réalisé le recensement complet du parc informatique avec <strong>GLPI</strong>. Chez <strong>EXTIA</strong>, j'ai utilisé <strong>Microsoft Intune</strong> pour la gestion du parc à distance.</p>
+          <ul><li>Installation et configuration de GLPI sur le serveur de la Mairie</li><li>Inventaire de 13 machines : postes fixes, serveurs, portables</li><li>Référencement des équipements réseau : switches, pare-feu</li><li>Chez EXTIA : gestion du parc avec Microsoft Intune (déploiement et suivi des postes à distance)</li><li>Chaque équipement tracé par localisation, numéro de série et fabricant</li></ul>
+          <p class="modal-bilan"><strong>Bilan :</strong> L'inventaire a été long car rien n'était automatisé à la Mairie — tout était fait manuellement poste par poste. Chez EXTIA, Intune permettait de gérer les postes à distance, ce qui m'a permis de voir la différence entre un SI à structurer et un SI mature.</p>`,
+    projects: [
+      { num: 'SP1', name: 'Inventaire parc GLPI', ctx: 'Stage Mairie · 2025' },
+      { num: 'SP8', name: 'Gestion parc Intune', ctx: 'Stage EXTIA · 2025' }
+    ],
+    techs: ['GLPI', 'Intune', 'Active Directory', 'Windows Server'],
     screenshots: [{ src: 'assets/screenshots/glpi-parc.png', caption: 'GLPI — Inventaire du parc (13 postes, serveurs, portables)' }]
   },
   c2: {
@@ -193,14 +196,15 @@ const COMPETENCES = {
     code: 'C17', bloc: 'Mettre à disposition un service',
     title: "Déploiement d'un service",
     desc: `Déployer un service informatique en environnement de production.`,
-    how: `<p>J'ai déployé <strong>GLPI sur serveur MAMP</strong> (Apache + MySQL) et le portfolio sur <strong>Vercel</strong>.</p>
-          <ul><li>Déploiement de GLPI : configuration de la base de données, permissions, initialisation</li><li>Stack serveur : Apache + MySQL via MAMP</li><li>Déploiement du portfolio sur Vercel avec CI/CD automatique</li><li>Vérification du bon fonctionnement après déploiement</li></ul>
-          <p class="modal-bilan"><strong>Bilan :</strong> Les deux déploiements se sont bien passés. GLPI demandait juste de suivre les étapes de configuration, et Vercel est très simple avec le CI/CD automatique depuis GitHub.</p>`,
+    how: `<p>J'ai déployé plusieurs services en production : <strong>GLPI</strong> et <strong>Apache Guacamole</strong> à la Mairie, <strong>Ansible</strong> chez EXTIA, et le portfolio sur <strong>Vercel</strong>.</p>
+          <ul><li>Déploiement de GLPI : configuration Apache + MySQL, base de données, permissions</li><li>Déploiement d'Apache Guacamole : accès distant aux postes via navigateur (RDP/VNC/SSH)</li><li>Écriture de playbooks Ansible chez EXTIA pour automatiser la configuration serveur</li><li>Déploiement du portfolio sur Vercel avec CI/CD automatique</li></ul>
+          <p class="modal-bilan"><strong>Bilan :</strong> Chaque déploiement avait ses défis — Guacamole nécessitait la configuration de Tomcat et des connexions RDP, Ansible demandait de comprendre la syntaxe YAML et les modules, et Vercel est très simple avec le CI/CD automatique depuis GitHub.</p>`,
     projects: [
-      { num: 'SP7', name: 'Déploiement GLPI', ctx: 'Stage Mairie · 2025' },
+      { num: 'SP7', name: 'Déploiement GLPI + Guacamole', ctx: 'Stage Mairie · 2025' },
+      { num: 'SP8', name: 'Playbooks Ansible', ctx: 'Stage EXTIA · 2025' },
       { num: 'RP3', name: 'Déploiement Portfolio (Vercel)', ctx: 'Projet personnel · 2025' }
     ],
-    techs: ['GLPI', 'MAMP', 'Apache', 'MySQL', 'Vercel'],
+    techs: ['GLPI', 'Guacamole', 'Ansible', 'MAMP', 'Apache', 'Vercel'],
     screenshots: [{ src: 'assets/screenshots/glpi-tickets.png', caption: 'GLPI déployé et opérationnel' }]
   },
   c18: {

@@ -236,6 +236,35 @@ section{padding:80px 0;border-top:1px solid var(--border)}
 .proj-link:hover{gap:10px}
 .proj-link svg{width:14px;height:14px}
 
+/* Project competencies toggle */
+.proj-comps{
+  display:none;margin-top:14px;padding:14px 16px;
+  background:rgba(214,255,77,.04);border:1px solid rgba(214,255,77,.1);border-radius:4px;
+}
+.proj-card.open .proj-comps{display:block}
+.proj-comps-title{
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--font-m);font-size:11px;font-weight:600;
+  color:var(--acc);letter-spacing:.04em;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.proj-comp-item{font-size:13px;color:var(--muted);line-height:1.6;padding:3px 0}
+.proj-comp-code{
+  display:inline-block;font-family:var(--font-m);font-size:11px;font-weight:700;
+  color:var(--acc2);background:rgba(232,168,56,.08);border-radius:3px;
+  padding:1px 7px;margin-right:8px;min-width:30px;text-align:center;
+}
+.proj-actions{display:flex;align-items:center;gap:16px;margin-top:14px}
+.proj-toggle{
+  background:none;border:1px solid var(--border);border-radius:3px;
+  font-family:var(--font-m);font-size:11px;color:var(--muted);
+  padding:5px 12px;cursor:pointer;transition:all .2s;
+}
+.proj-toggle:hover{border-color:var(--acc);color:var(--acc)}
+.proj-toggle-hide{display:none}
+.proj-card.open .proj-toggle-show{display:none}
+.proj-card.open .proj-toggle-hide{display:inline}
+
 /* ═══════════════════════════════════════════════
    PARCOURS
 ═══════════════════════════════════════════════ */
@@ -287,6 +316,22 @@ section{padding:80px 0;border-top:1px solid var(--border)}
 }
 .stage-block p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
 .stage-block p strong{color:var(--text)}
+.stage-missions{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.stage-mission{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:10px 14px;background:rgba(255,255,255,.02);
+  border:1px solid var(--border);border-radius:4px;
+}
+.stage-mission div:last-child{font-size:13px;color:var(--muted);line-height:1.6}
+.stage-mission div:last-child strong{color:var(--text);font-weight:600}
+.stage-mission-comps{
+  display:flex;gap:4px;flex-shrink:0;padding-top:2px;
+}
+.stage-mission-comps span{
+  font-family:var(--font-m);font-size:10px;font-weight:700;
+  color:var(--acc2);background:rgba(232,168,56,.08);
+  border-radius:3px;padding:2px 7px;min-width:28px;text-align:center;
+}
 .stage-techs{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
 .stage-techs span{font-family:var(--font-m);font-size:10px;color:var(--muted);padding:3px 10px;border:1px solid var(--border);border-radius:40px}
 
